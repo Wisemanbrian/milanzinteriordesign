@@ -628,11 +628,14 @@ height: 59;
     50% { transform: scale(1.02); }
 }
 .hero video {
-    position: absolute;
-    top: 50%; left: 50%;
-    transform: translate(-50%, -50%);
-    min-width: 100%; min-height: 100%;
-    object-fit: cover;
+     position: absolute;
+      top: 50%; 
+      left: 50%;
+      transform: translate(-50%, -50%);
+      min-width: 100%; 
+      min-height: 100%;
+      object-fit: cover;
+      z-index: -1;
 }
 .hero > div:first-child::after {
     content: "";
@@ -1542,6 +1545,9 @@ margin-top: 70px;
   padding: 70px 20px 0;
   line-height: 1.6;
 }
+
+
+
 
 .footer-container {
   max-width: 1200px;
