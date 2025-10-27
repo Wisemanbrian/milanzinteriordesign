@@ -1,0 +1,82 @@
+.featured-logos-section {
+  background: #fff;
+  padding: 40px 20px;
+  text-align: center;
+  overflow: hidden;
+}
+
+.featured-title {
+
+position: relative;
+  display: inline-block;
+  font-size: 2.4rem;
+  font-weight: 700;
+  font-style: italic;
+  font-family: 'Playfair Display', Georgia, serif;
+  margin: 0 auto 40px;
+  text-transform:capitalize;
+
+}
+
+.featured-title span{
+  color: #4D4D4D;
+
+}
+.logo-slider {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+}
+
+.logo-track {
+  display: flex;
+  width: max-content;
+  animation: scrollLogos 30s linear infinite;
+}
+
+.logo-track img {
+  height: 40px;
+  margin: 0 30px;
+  filter: grayscale(100%);
+  opacity: 0.8;
+  transition: transform 0.3s ease;
+}
+
+.logo-track img:hover {
+  transform: scale(1.05);
+  opacity: 1;
+  filter: grayscale(0%);
+}
+
+@keyframes scrollLogos {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .logo-track img {
+    height: 30px;
+    margin: 0 20px;
+  }
+
+  .featured-title {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .logo-track img {
+    height: 26px;
+    margin: 0 15px;
+  }
+
+  .featured-title {
+    font-size: 11px;
+  }
+}
+

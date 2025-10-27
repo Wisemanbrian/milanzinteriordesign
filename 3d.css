@@ -1,0 +1,248 @@
+/* NexusTrophyDisplay Styles - Enhanced 3D Glassmorphism */
+.nexus-trophy-display {
+  position: relative;
+  width: 320px;
+  height: 420px;
+  margin: 2rem auto;
+  perspective: 1200px;
+  font-family: 'Arial', sans-serif;
+  transform-style: preserve-3d;
+}
+
+.nexus-trophy-glass {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    145deg,
+    rgba(255, 255, 255, 0.15) 0%,
+    rgba(255, 255, 255, 0.05) 100%
+  );
+  border-radius: 20px;
+  backdrop-filter: blur(16px) brightness(1.1);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  box-shadow: 
+    0 25px 45px rgba(0, 0, 0, 0.2),
+    inset 0 0 20px rgba(255, 255, 255, 0.3),
+    0 0 50px rgba(212, 175, 55, 0.15);
+  overflow: hidden;
+  transform-style: preserve-3d;
+  transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275), 
+              box-shadow 0.5s ease;
+  z-index: 2;
+  transform: translateZ(20px) rotateX(5deg);
+}
+
+.nexus-trophy-glass-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+}
+
+.nexus-trophy-image-container {
+  position: relative;
+  width: 100%;
+  height: 60%;
+  overflow: hidden;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  transform: translateZ(30px);
+}
+
+.nexus-trophy-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  filter: brightness(1.1) contrast(1.1) saturate(1.2);
+  transition: transform 0.5s ease;
+  transform-style: preserve-3d;
+}
+
+.nexus-trophy-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, 
+             rgba(242, 239, 233, 0.2) 0%, 
+             rgba(200, 230, 255, 0.1) 100%);
+  transform: translateZ(5px);
+}
+
+.nexus-trophy-content {
+  position: relative;
+  padding: 1.5rem;
+  text-align: center;
+  color: #333;
+  transform: translateZ(40px);
+}
+
+.nexus-trophy-title {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  background: linear-gradient(90deg, #8a6e4b, #d4af37, #f9e076);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  text-shadow: 0 2px 10px rgba(212, 175, 55, 0.3);
+  transform: translateZ(50px);
+}
+
+.nexus-trophy-year {
+  margin: 0.5rem 0 0;
+  font-size: 2.5rem;
+  font-weight: 900;
+  color: #d4af37;
+  text-shadow: 0 2px 15px rgba(212, 175, 55, 0.5);
+  transform: translateZ(30px);
+}
+
+.nexus-trophy-reflection {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(120deg, 
+             rgba(255, 255, 255, 0) 40%, 
+             rgba(255, 255, 255, 0.25) 50%, 
+             rgba(255, 255, 255, 0) 60%);
+  pointer-events: none;
+  transform: translateZ(1px);
+  opacity: 0.7;
+  mix-blend-mode: overlay;
+}
+
+.nexus-trophy-refraction {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at 70% 30%, 
+             rgba(255, 255, 255, 0.4) 0%, 
+             transparent 60%);
+  pointer-events: none;
+  mix-blend-mode: soft-light;
+  transform: translateZ(10px);
+}
+
+.nexus-trophy-glow {
+  position: absolute;
+  width: 150%;
+  height: 150%;
+  top: -25%;
+  left: -25%;
+  background: radial-gradient(circle, 
+             rgba(212, 175, 55, 0.4) 0%, 
+             rgba(212, 175, 55, 0) 70%);
+  border-radius: 50%;
+  filter: blur(40px);
+  opacity: 0.8;
+  animation: nexus-glow-pulse 5s infinite alternate;
+  z-index: 1;
+  transform: translateZ(-10px);
+}
+
+.nexus-trophy-glow-secondary {
+  position: absolute;
+  width: 120%;
+  height: 120%;
+  top: -10%;
+  left: -10%;
+  background: radial-gradient(circle at 30% 70%, 
+             rgba(100, 180, 255, 0.2) 0%, 
+             transparent 70%);
+  border-radius: 50%;
+  filter: blur(30px);
+  opacity: 0.6;
+  z-index: 1;
+  transform: translateZ(-20px);
+}
+
+.nexus-trophy-badge {
+  position: absolute;
+  top: -15px;
+  right: -15px;
+  background: linear-gradient(135deg, #d4af37, #8a6e4b);
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-weight: bold;
+  font-size: 0.9rem;
+  box-shadow: 0 5px 25px rgba(138, 110, 75, 0.6);
+  z-index: 3;
+  transform: rotate(15deg) translateZ(50px);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.nexus-trophy-floor-shadow {
+  position: absolute;
+  width: 80%;
+  height: 30px;
+  bottom: -20px;
+  left: 10%;
+  background: radial-gradient(ellipse at center, 
+             rgba(0,0,0,0.4) 0%, 
+             transparent 80%);
+  filter: blur(10px);
+  z-index: 0;
+  transform: translateZ(-50px);
+  opacity: 0.6;
+}
+
+.nexus-trophy-particles {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  transform-style: preserve-3d;
+}
+
+/* Particle Styles */
+.nexus-particle {
+  position: absolute;
+  background: rgba(212, 175, 55, 0.6);
+  border-radius: 50%;
+  pointer-events: none;
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+}
+
+/* Animations */
+@keyframes nexus-glow-pulse {
+  0% { transform: translateZ(-10px) scale(0.95); opacity: 0.6; }
+  100% { transform: translateZ(-10px) scale(1.05); opacity: 0.9; }
+}
+
+@keyframes nexus-particle-float {
+  0% { transform: translateY(0) rotate(0deg) translateZ(10px); opacity: 0; }
+  10% { opacity: 1; }
+  90% { opacity: 1; }
+  100% { transform: translateY(-100px) rotate(360deg) translateZ(50px); opacity: 0; }
+}
+
+/* Hover Effects */
+.nexus-trophy-glass:hover {
+  transform: translateY(-10px) rotateX(8deg) rotateY(2deg) translateZ(30px);
+  box-shadow: 
+    0 35px 60px rgba(0, 0, 0, 0.3),
+    inset 0 0 30px rgba(255, 255, 255, 0.4),
+    0 0 80px rgba(212, 175, 55, 0.3);
+}
+
+.nexus-trophy-glass:hover .nexus-trophy-image {
+  transform: scale(1.05) translateZ(40px);
+}
+
+.nexus-trophy-glass:hover .nexus-trophy-badge {
+  transform: rotate(15deg) translateZ(70px) scale(1.05);
+  box-shadow: 0 8px 30px rgba(138, 110, 75, 0.8);
+}
