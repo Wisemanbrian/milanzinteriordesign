@@ -74,12 +74,12 @@
 
     <section class="hero">
     <!-- Video -->
-    <video id="bgVideo" autoplay muted loop playsinline preload="auto" poster="fallback.jpg">
-  <source src="Sparc.mp4" type="video/mp4">
-  
-</video>
-
-
+    <div>
+        <video autoplay muted loop playsinline>
+            <source src="Sparc.mp4" type="video/mp4">
+          <!--   <img src="fallback.jpg" alt="Interior"> -->
+        </video>
+    </div>
 
     <!-- Content -->
     <div>
@@ -789,43 +789,5 @@
     <script src="script.js"></script>
     <script src="increament.js"></script>
     <script src="scroll-animations.js"></script>
-
-<script>
-document.addEventListener("DOMContentLoaded", function () {
-  const video = document.getElementById("bgVideo");
-
-  // Ensure proper attributes for mobile Safari
-  video.setAttribute("muted", "");
-  video.muted = true;
-  video.setAttribute("playsinline", "");
-  video.setAttribute("webkit-playsinline", "");
-  video.setAttribute("autoplay", "");
-  video.autoplay = true;
-  video.loop = true;
-
-  // Attempt autoplay immediately
-  const playPromise = video.play();
-
-  if (playPromise !== undefined) {
-    playPromise
-      .then(() => {
-        console.log("✅ Video autoplayed successfully");
-      })
-      .catch((error) => {
-        console.warn("⚠️ Autoplay blocked, waiting for user interaction...", error);
-        // iOS sometimes requires user gesture if autoplay fails
-        const resumePlayback = () => {
-          video.play();
-          document.removeEventListener("touchstart", resumePlayback);
-          document.removeEventListener("click", resumePlayback);
-        };
-        document.addEventListener("touchstart", resumePlayback, { once: true });
-        document.addEventListener("click", resumePlayback, { once: true });
-      });
-  }
-});
-</script>
-
-
 </body>
 </html>
