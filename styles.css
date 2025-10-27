@@ -772,6 +772,10 @@ margin-top: 70px;
 @media (max-width: 1024px) {
     .hero h1 { font-size: 3rem; line-height: 1.4; margin-bottom: 1.2rem; }
     /* Buttons now visible – no hide */
+    .hero > div:nth-child(2) > div {
+    display: flex !important;
+   
+    gap: 1rem !important;
 }
 @media (max-width: 767px) {
     .hero h1 { font-size: 2rem; line-height: 1.3; margin-bottom: 1rem; }
@@ -840,12 +844,10 @@ margin-top: 70px;
   }
   .hero > div:nth-child(2) > div {
     display: flex !important;
-    flex-direction: column !important;
+   
     gap: 1rem !important;
-    align-items: center;
-    width: 100%;
-    max-width: 300px;
-    margin: 0 auto;
+   
+   
   }
   .hero a {
     width: 100% !important;
