@@ -74,12 +74,13 @@
 
     <section class="hero">
     <!-- Video -->
-    <div>
-        <video autoplay muted loop playsinline>
-            <source src="Sparc.mp4" type="video/mp4">
-          <!--   <img src="fallback.jpg" alt="Interior"> -->
-        </video>
-    </div>
+    <div class="video-container">
+  <video id="bgVideo" autoplay muted playsinline loop preload="auto" poster="fallback.jpg">
+    <source src="Sparc.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+</div>
+
 
     <!-- Content -->
     <div>
@@ -789,5 +790,34 @@
     <script src="script.js"></script>
     <script src="increament.js"></script>
     <script src="scroll-animations.js"></script>
+
+
+    <script>
+document.addEventListener("DOMContentLoaded", function () {
+  const video = document.getElementById("bgVideo");
+
+  // Ensure inline playback for iOS
+  video.setAttribute("playsinline", "");
+  video.setAttribute("webkit-playsinline", "");
+
+  // Try to play video programmatically (needed on some mobile browsers)
+  const tryPlay = () => {
+    video.play().catch((error) => {
+      console.log("Autoplay blocked, waiting for user interaction...", error);
+      // fallback: play once user interacts
+      const userStart = () => {
+        video.play();
+        document.removeEventListener("touchstart", userStart);
+        document.removeEventListener("click", userStart);
+      };
+      document.addEventListener("touchstart", userStart, { once: true });
+      document.addEventListener("click", userStart, { once: true });
+    });
+  };
+
+  tryPlay();
+});
+</script>
+
 </body>
 </html>
