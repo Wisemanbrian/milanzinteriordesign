@@ -74,12 +74,11 @@
 
     <section class="hero">
     <!-- Video -->
-    <div class="video-container">
-  <video id="bgVideo" autoplay muted playsinline loop preload="auto" poster="fallback.jpg">
-    <source src="Sparc.mp4" type="video/mp4">
-    Your browser does not support the video tag.
-  </video>
-</div>
+    <video id="bgVideo" autoplay muted loop playsinline preload="auto" poster="fallback.jpg">
+  <source src="Sparc.mp4" type="video/mp4">
+  
+</video>
+
 
 
     <!-- Content -->
@@ -791,33 +790,42 @@
     <script src="increament.js"></script>
     <script src="scroll-animations.js"></script>
 
-
-    <script>
+<script>
 document.addEventListener("DOMContentLoaded", function () {
   const video = document.getElementById("bgVideo");
 
-  // Ensure inline playback for iOS
+  // Ensure proper attributes for mobile Safari
+  video.setAttribute("muted", "");
+  video.muted = true;
   video.setAttribute("playsinline", "");
   video.setAttribute("webkit-playsinline", "");
+  video.setAttribute("autoplay", "");
+  video.autoplay = true;
+  video.loop = true;
 
-  // Try to play video programmatically (needed on some mobile browsers)
-  const tryPlay = () => {
-    video.play().catch((error) => {
-      console.log("Autoplay blocked, waiting for user interaction...", error);
-      // fallback: play once user interacts
-      const userStart = () => {
-        video.play();
-        document.removeEventListener("touchstart", userStart);
-        document.removeEventListener("click", userStart);
-      };
-      document.addEventListener("touchstart", userStart, { once: true });
-      document.addEventListener("click", userStart, { once: true });
-    });
-  };
+  // Attempt autoplay immediately
+  const playPromise = video.play();
 
-  tryPlay();
+  if (playPromise !== undefined) {
+    playPromise
+      .then(() => {
+        console.log("✅ Video autoplayed successfully");
+      })
+      .catch((error) => {
+        console.warn("⚠️ Autoplay blocked, waiting for user interaction...", error);
+        // iOS sometimes requires user gesture if autoplay fails
+        const resumePlayback = () => {
+          video.play();
+          document.removeEventListener("touchstart", resumePlayback);
+          document.removeEventListener("click", resumePlayback);
+        };
+        document.addEventListener("touchstart", resumePlayback, { once: true });
+        document.addEventListener("click", resumePlayback, { once: true });
+      });
+  }
 });
 </script>
+
 
 </body>
 </html>
