@@ -1,0 +1,241 @@
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  background-color: #fff;
+  color: #222;
+}
+
+.contact-section {
+  padding: 80px 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.contact-container {
+  max-width: 1100px;
+  width: 100%;
+  display: flex;
+  gap: 60px;
+  flex-wrap: wrap;
+}
+
+.contact-info {
+  flex: 1;
+  min-width: 320px;
+}
+
+.contact-info h2 {
+  font-family: 'Playfair Display', serif;
+  font-weight: 600;
+  font-size: 32px;
+  margin-bottom: 6px;
+}
+
+.contact-info span {
+  font-style: italic;
+}
+
+.subtitle {
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 40px;
+}
+
+.info-block h3 {
+  font-family: 'Playfair Display', serif;
+  font-weight: 600;
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.info-block p {
+  font-size: 14px;
+  color: #444;
+  margin-bottom: 25px;
+  line-height: 1.6;
+}
+
+.info-item {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  margin-bottom: 25px;
+}
+
+.icon-box {
+  width: 52px;
+  height: 52px;
+  background-color: #f1f1f1;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon-box svg {
+  width: 26px;
+  height: 26px;
+}
+
+.label {
+  font-weight: 600;
+  font-family: 'Playfair Display', serif;
+  margin-bottom: 4px;
+}
+
+.office-hours {
+  margin-top: 30px;
+}
+
+.office-hours h4 {
+  font-family: 'Playfair Display', serif;
+  font-weight: 600;
+  font-style: italic;
+  margin-bottom: 10px;
+}
+
+.contact-form {
+  flex: 1;
+  min-width: 320px;
+  background-color: #fff;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+  border-radius: 12px;
+  padding: 40px 30px;
+}
+
+.contact-form h3 {
+  font-family: 'Playfair Display', serif;
+  font-weight: 500;
+  font-size: 20px;
+  margin-bottom: 25px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+label {
+  font-size: 14px;
+  font-weight: 500;
+  color: #333;
+}
+
+input,
+select,
+textarea {
+  padding: 12px 14px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+  font-family: 'Inter', sans-serif;
+  outline: none;
+  transition: border-color 0.3s;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: #000;
+}
+
+textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+button {
+  background-color: #000;
+  color: #fff;
+  border: none;
+  padding: 14px;
+  font-size: 15px;
+  font-weight: 500;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #333;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .contact-container {
+    flex-direction: column;
+  }
+}
+
+/* PROFESSIONAL FADE-IN ANIMATIONS - ADD TO <head> */
+.fade-in-element,
+[class*="card"],
+.hero-content,
+.story-text,
+.join-content,
+.promise-card,
+.service-body,
+.project-card,
+.furniture-card,
+.team-card,
+.contact-info,
+.contact-form {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.fade-in-element.fade-in-visible,
+[class*="card"].fade-in-visible,
+.hero-content.fade-in-visible,
+.story-text.fade-in-visible,
+.join-content.fade-in-visible,
+.promise-card.fade-in-visible,
+.service-body.fade-in-visible,
+.project-card.fade-in-visible,
+.furniture-card.fade-in-visible,
+.team-card.fade-in-visible,
+.contact-info.fade-in-visible,
+.contact-form.fade-in-visible {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+
+/* STAGGER DELAYS FOR GRIDS (Auto-applied by JS) */
+.fade-in-grid > *:nth-child(1) { transition-delay: 0.1s; }
+.fade-in-grid > *:nth-child(2) { transition-delay: 0.2s; }
+.fade-in-grid > *:nth-child(3) { transition-delay: 0.3s; }
+.fade-in-grid > *:nth-child(4) { transition-delay: 0.4s; }
+.fade-in-grid > *:nth-child(5) { transition-delay: 0.5s; }
+.fade-in-grid > *:nth-child(6) { transition-delay: 0.6s; }
+.fade-in-grid > *:nth-child(7) { transition-delay: 0.7s; }
+.fade-in-grid > *:nth-child(8) { transition-delay: 0.8s; }
+.fade-in-grid > *:nth-child(9) { transition-delay: 0.9s; }
+
+/* ABOVE-THE-FOLD INSTANT ANIMATION */
+.hero,
+.portfolio-header,
+.services-section h2,
+.philosophy-section h2 {
+  opacity: 1 !important;
+  transform: none !important;
+}
+
+/* REDUCED MOTION SUPPORT (WCAG AAA) */
+@media (prefers-reduced-motion: reduce) {
+  .fade-in-element,
+  [class*="card"],
+  .hero-content,
+  .story-text,
+  .join-content,
+  .promise-card,
+  .service-body,
+  .project-card,
+  .furniture-card,
+  .team-card {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+}

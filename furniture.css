@@ -1,0 +1,254 @@
+/* Fonts and base setup */
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #fff;
+  font-family: 'Inter', sans-serif;
+  color: #1f1f1f;
+}
+
+/* Section layout */
+.furniture-section {
+  padding: 100px 20px;
+  text-align: center;
+  background-color: #fafafa;
+}
+
+.furniture-section .container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Title */
+.furniture-section h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.4rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: #1f1f1f;
+}
+
+.furniture-section h2 span {
+  font-weight: 400;
+  font-style: italic;
+}
+
+.furniture-section p {
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.7;
+  margin-bottom: 60px;
+}
+
+/* Furniture grid */
+.furniture-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 40px;
+  justify-items: center;
+}
+
+/* Card style */
+.furniture-card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  width: 100%;
+  max-width: 360px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+}
+
+.furniture-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* Tag label */
+.furniture-card .tag {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  background:#FFFFFF;
+  color: #000;
+  font-weight: 600;
+  font-size: 0.8rem;
+  padding: 4px 10px;
+  border-radius: 6px;
+}
+
+/* Image */
+.furniture-card img {
+  width: 100%;
+  height: 230px;
+  object-fit: cover;
+  border-bottom: 1px solid #eee;
+}
+
+/* Card content */
+.card-body {
+  padding: 20px;
+  text-align: left;
+}
+
+.card-body h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.25rem;
+  margin-bottom: 10px;
+  color: #1f1f1f;
+}
+
+.card-body p {
+  font-size: 0.95rem;
+  color: #555;
+  line-height: 1.5;
+  margin-bottom: 10px;
+}
+
+.card-body .materials {
+  font-size: 0.9rem;
+  color: #444;
+  margin-bottom: 20px;
+}
+
+/* Button */
+.card-body button {
+  background-color: #1f1f1f;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.card-body button:hover {
+  background-color: #000;
+  transform: translateY(-2px);
+}
+
+
+
+.join-team {
+  background-color: #1f1f1f;
+  border-radius: 10px;
+  text-align: center;
+  color: #fff;
+  max-width: 700px;
+  margin: 80px auto;
+  padding: 50px 30px;
+  position: relative;
+  box-shadow: 0 4px 0 0 #ffef00; /* Yellow bottom border */
+}
+
+.join-content h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.join-content h2 em {
+  font-style: italic;
+  font-weight: 400;
+}
+
+.join-content p {
+  color: #e0e0e0;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  max-width: 600px;
+  margin: 0 auto 25px;
+}
+
+.join-content button {
+  background-color: #fff;
+  color: #000;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+  transition: all 0.3s ease;
+}
+
+.join-content button:hover {
+  background-color: #f5f5f5;
+  transform: translateY(-2px);
+}
+
+/* PROFESSIONAL FADE-IN ANIMATIONS - ADD TO <head> */
+.fade-in-element,
+[class*="card"],
+.hero-content,
+.story-text,
+.join-content,
+.promise-card,
+.service-body,
+.project-card,
+.furniture-card,
+.team-card,
+.contact-info,
+.contact-form {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.fade-in-element.fade-in-visible,
+[class*="card"].fade-in-visible,
+.hero-content.fade-in-visible,
+.story-text.fade-in-visible,
+.join-content.fade-in-visible,
+.promise-card.fade-in-visible,
+.service-body.fade-in-visible,
+.project-card.fade-in-visible,
+.furniture-card.fade-in-visible,
+.team-card.fade-in-visible,
+.contact-info.fade-in-visible,
+.contact-form.fade-in-visible {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+
+/* STAGGER DELAYS FOR GRIDS (Auto-applied by JS) */
+.fade-in-grid > *:nth-child(1) { transition-delay: 0.1s; }
+.fade-in-grid > *:nth-child(2) { transition-delay: 0.2s; }
+.fade-in-grid > *:nth-child(3) { transition-delay: 0.3s; }
+.fade-in-grid > *:nth-child(4) { transition-delay: 0.4s; }
+.fade-in-grid > *:nth-child(5) { transition-delay: 0.5s; }
+.fade-in-grid > *:nth-child(6) { transition-delay: 0.6s; }
+.fade-in-grid > *:nth-child(7) { transition-delay: 0.7s; }
+.fade-in-grid > *:nth-child(8) { transition-delay: 0.8s; }
+.fade-in-grid > *:nth-child(9) { transition-delay: 0.9s; }
+
+/* ABOVE-THE-FOLD INSTANT ANIMATION */
+.hero,
+.portfolio-header,
+.services-section h2,
+.philosophy-section h2 {
+  opacity: 1 !important;
+  transform: none !important;
+}
+
+/* REDUCED MOTION SUPPORT (WCAG AAA) */
+@media (prefers-reduced-motion: reduce) {
+  .fade-in-element,
+  [class*="card"],
+  .hero-content,
+  .story-text,
+  .join-content,
+  .promise-card,
+  .service-body,
+  .project-card,
+  .furniture-card,
+  .team-card {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+}
