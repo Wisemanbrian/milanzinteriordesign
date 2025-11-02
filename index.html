@@ -349,7 +349,89 @@
     <script src="scroll-animations.js"></script>
 
 
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const video = document.getElementById("bgVideo");
 
+  // Ensure proper attributes for mobile Safari
+  video.setAttribute("muted", "");
+  video.muted = true;
+  video.setAttribute("playsinline", "");
+  video.setAttribute("webkit-playsinline", "");
+  video.setAttribute("autoplay", "");
+  video.autoplay = true;
+  video.loop = true;
+
+  // Attempt autoplay immediately
+  const playPromise = video.play();
+
+  if (playPromise !== undefined) {
+    playPromise
+      .then(() => {
+        console.log("✅ Video autoplayed successfully");
+      })
+      .catch((error) => {
+        console.warn("⚠️ Autoplay blocked, waiting for user interaction...", error);
+        // iOS sometimes requires user gesture if autoplay fails
+        const resumePlayback = () => {
+          video.play();
+          document.removeEventListener("touchstart", resumePlayback);
+          document.removeEventListener("click", resumePlayback);
+        };
+        document.addEventListener("touchstart", resumePlayback, { once: true });
+        document.addEventListener("click", resumePlayback, { once: true });
+      });
+  }
+});
+
+
+gsap.registerPlugin(ScrollTrigger);
+
+function bigFadeInEveryScroll(selector, options = {}) {
+  const defaults = {
+    opacity: 0,
+    scale: 0.8,
+    y: 100,
+    duration: 1.5,
+    ease: "power4.out",
+    stagger: 0.3
+  };
+  
+  const settings = { ...defaults, ...options };
+  
+  gsap.utils.toArray(selector).forEach((el) => {
+    gsap.fromTo(
+      el,
+      { opacity: settings.opacity, scale: settings.scale, y: settings.y },
+      {
+        opacity: 1,
+        scale: 1,
+        y: 0,
+        duration: settings.duration,
+        ease: settings.ease,
+        stagger: settings.stagger,
+        scrollTrigger: {
+          trigger: el,
+          start: "top 80%",        // start when element reaches 80% from top
+          end: "bottom 20%",       // optional: how long the trigger lasts
+          toggleActions: "restart reverse restart reverse", 
+          markers: false
+        }
+      }
+    );
+  });
+}
+
+// Example usage:
+bigFadeInEveryScroll(".hero h1, .hero p, .hero a");
+bigFadeInEveryScroll(".feature-item");
+bigFadeInEveryScroll(".project-card");
+bigFadeInEveryScroll(".award-item");
+bigFadeInEveryScroll(".trusted-title, .trusted-text");
+bigFadeInEveryScroll(".footer-container > div");
+
+
+</script>
 
 </body>
 </html>
