@@ -924,6 +924,7 @@ margin-top: 70px;
   font-size: 0.95rem;
   color: #aaa;
   line-height: 1.6;
+  max-width: 320px;
 }
 
 /* SECTION TITLES */
@@ -982,6 +983,7 @@ margin-top: 70px;
   display: flex;
   gap: 15px;
   margin-top: 10px;
+  flex-wrap: wrap;
 }
 
 .social-icons a {
@@ -1008,7 +1010,15 @@ margin-top: 70px;
 }
 
 /* BOTTOM BAR */
-
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 20px;
+  font-size: 0.9rem;
+  color: #888;
+  flex-wrap: wrap;
+}
 
 .privacy-link {
   color: #888;
@@ -1021,10 +1031,10 @@ margin-top: 70px;
 }
 
 /* ==============================
-   RESPONSIVE
+   RESPONSIVE DESIGN
    ============================== */
 
-/* Tablets */
+/* Large Tablets */
 @media (max-width: 1225px) {
   .footer-container {
     grid-template-columns: repeat(2, 1fr);
@@ -1037,24 +1047,78 @@ margin-top: 70px;
   .social-icons {
     justify-content: center;
   }
+  .brand-tagline {
+    max-width: 100%;
+    margin: 0 auto;
+  }
 }
 
-/* Mobile */
-@media (max-width: 768px) {
+/* Small Tablets and Large Phones */
+@media (max-width: 900px) {
+  .milanzi-footer {
+    padding: 60px 20px 20px;
+  }
   .footer-container {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr 1fr;
     gap: 40px;
-    text-align: center;
   }
   .footer-social {
+    grid-column: span 2;
     text-align: center;
   }
   .social-icons {
     justify-content: center;
   }
+}
+
+/* Mobile Phones */
+@media (max-width: 768px) {
+  .footer-container {
+    grid-template-columns: 1fr;
+    gap: 35px;
+    text-align: center;
+  }
+
+  .brand-title {
+    font-size: 1.7rem;
+  }
+
+  .footer-social {
+    text-align: center;
+  }
+
+  .social-icons {
+    justify-content: center;
+  }
+
+  .footer-contact li {
+    justify-content: center;
+  }
+
   .footer-bottom {
     flex-direction: column;
-    gap: 10px;
+    gap: 12px;
     text-align: center;
+  }
+}
+
+/* Extra Small Phones (≤ 480px) */
+@media (max-width: 480px) {
+  .milanzi-footer {
+    padding: 50px 15px 15px;
+  }
+
+  .brand-title {
+    font-size: 1.5rem;
+  }
+
+  .footer-heading {
+    font-size: 1rem;
+  }
+
+  .social-icons a {
+    width: 36px;
+    height: 36px;
+    font-size: 16px;
   }
 }
