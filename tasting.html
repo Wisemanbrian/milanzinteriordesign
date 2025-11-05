@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Milanzi Footer</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', system-ui, sans-serif;
+            background: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .demo-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            text-align: center;
+        }
+        
+        .demo-title {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            color: #2c3e50;
+        }
+        
+        .demo-subtitle {
+            font-size: 1.2rem;
+            color: #7f8c8d;
+            margin-bottom: 40px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .content-box {
+            background: white;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            margin-bottom: 40px;
+        }
+        
+        .content-box h2 {
+            color: #2c3e50;
+            margin-bottom: 20px;
+        }
+        
+        .content-box p {
+            margin-bottom: 15px;
+            text-align: left;
+        }
+        
+        .milanzi-footer {
+            background: #2c2c2c; /* Dark gray background */
+            color: #ccc;
+            font-family: 'Inter', system-ui, sans-serif;
+            padding: 80px 20px 20px;
+            line-height: 1.7;
+        }
+
+        /* GRID */
+        .footer-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 60px;
+            padding-bottom: 60px;
+            border-bottom: 1px solid #444;
+            text-align: center; /* Center all content */
+        }
+
+        /* BRAND */
+        .brand-title {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 10px;
+        }
+
+        .brand-tagline {
+            font-size: 0.95rem;
+            color: #aaa;
+            line-height: 1.6;
+            max-width: 320px;
+            margin: 0 auto; /* Center the tagline */
+        }
+
+        /* SECTION TITLES */
+        .footer-heading {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #ccc;
+            margin-bottom: 18px;
+        }
+
+        /* LINKS */
+        .footer-links ul,
+        .footer-contact ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .footer-links li,
+        .footer-contact li {
+            margin-bottom: 12px;
+        }
+
+        .footer-links a {
+            color: #ccc;
+            text-decoration: none;
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: #fff;
+        }
+
+        /* CONTACT */
+        .footer-contact li {
+            display: flex;
+            align-items: center;
+            justify-content: center; /* Center contact items */
+            gap: 12px;
+            font-size: 0.95rem;
+        }
+
+        .footer-contact svg {
+            width: 18px;
+            height: 18px;
+            stroke: #fff;
+        }
+
+        /* SOCIAL */
+        .footer-social {
+            text-align: center; /* Center social section */
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 15px;
+            margin-top: 10px;
+            flex-wrap: wrap;
+            justify-content: center; /* Center social icons */
+        }
+
+        .social-icons a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            color: #fff;
+            font-size: 18px;
+            transition: all 0.3s ease;
+            background: #555; /* White social media icons */
+        }
+
+        .social-icons a:hover {
+            transform: translateY(-5px) scale(1.1);
+            filter: brightness(1.3);
+        }
+
+        /* BOTTOM BAR */
+        .footer-bottom {
+            display: flex;
+            justify-content: center; /* Center bottom content */
+            align-items: center;
+            padding-top: 20px;
+            font-size: 0.9rem;
+            color: #888;
+            flex-wrap: wrap;
+            text-align: center;
+        }
+
+        .privacy-link {
+            color: #888;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .privacy-link:hover {
+            color: #fff;
+        }
+
+        /* ==============================
+           RESPONSIVE DESIGN
+           ============================== */
+
+        /* Large Tablets */
+        @media (max-width: 1225px) {
+            .footer-container {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 40px;
+            }
+            .footer-social {
+                grid-column: span 2;
+                text-align: center;
+            }
+            .social-icons {
+                justify-content: center;
+            }
+            .brand-tagline {
+                max-width: 100%;
+                margin: 0 auto;
+            }
+        }
+
+        /* Small Tablets and Large Phones */
+        @media (max-width: 900px) {
+            .milanzi-footer {
+                padding: 60px 20px 20px;
+            }
+            .footer-container {
+                grid-template-columns: 1fr 1fr;
+                gap: 40px;
+            }
+            .footer-social {
+                grid-column: span 2;
+                text-align: center;
+            }
+            .social-icons {
+                justify-content: center;
+            }
+        }
+
+        /* Mobile Phones */
+        @media (max-width: 768px) {
+            .footer-container {
+                grid-template-columns: 1fr;
+                gap: 35px;
+                text-align: center;
+            }
+
+            .brand-title {
+                font-size: 1.7rem;
+            }
+
+            .footer-social {
+                text-align: center;
+            }
+
+            .social-icons {
+                justify-content: center;
+            }
+
+            .footer-contact li {
+                justify-content: center;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                gap: 12px;
+                text-align: center;
+            }
+        }
+
+        /* Extra Small Phones (≤ 480px) */
+        @media (max-width: 480px) {
+            .milanzi-footer {
+                padding: 50px 15px 15px;
+            }
+
+            .brand-title {
+                font-size: 1.5rem;
+            }
+
+            .footer-heading {
+                font-size: 1rem;
+            }
+
+            .social-icons a {
+                width: 36px;
+                height: 36px;
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="demo-container">
+        <h1 class="demo-title">Modern Footer Example</h1>
+        <p class="demo-subtitle">This page demonstrates a responsive footer with dark gray background, centered content, and white social media icons.</p>
+        
+        <div class="content-box">
+            <h2>About This Footer</h2>
+            <p>This footer features:</p>
+            <p>• Dark gray background (#2c2c2c)</p>
+            <p>• All content centered both horizontally and vertically</p>
+            <p>• Added locations: Blantyre, Lilongwe, and Johannesburg</p>
+            <p>• White social media icons with hover effects</p>
+            <p>• Fully responsive design that works on all devices</p>
+            <p>• Clean, modern aesthetic with proper spacing</p>
+        </div>
+        
+        <div class="content-box">
+            <h2>Scroll down to see the footer</h2>
+            <p>The footer is positioned at the bottom of this page. It includes:</p>
+            <p>• Company branding section</p>
+            <p>• Quick navigation links</p>
+            <p>• Contact information with multiple locations</p>
+            <p>• Social media links with white icons</p>
+            <p>• Copyright and privacy policy information</p>
+        </div>
+    </div>
+
+    <footer class="milanzi-footer">
+        <div class="footer-container">
+            <!-- Brand Section -->
+            <div class="footer-brand">
+                <h2 class="brand-title">Milanzi</h2>
+                <p class="brand-tagline">Creating innovative solutions for a better tomorrow. We're committed to excellence in everything we do.</p>
+            </div>
+
+            <!-- Links Section -->
+            <div class="footer-links">
+                <h3 class="footer-heading">Quick Links</h3>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">Portfolio</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+
+            <!-- Contact Section -->
+            <div class="footer-contact">
+                <h3 class="footer-heading">Contact Us</h3>
+                <ul>
+                    <li>
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Blantyre, Malawi</span>
+                    </li>
+                    <li>
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Lilongwe, Malawi</span>
+                    </li>
+                    <li>
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Johannesburg, South Africa</span>
+                    </li>
+                    <li>
+                        <i class="fas fa-phone"></i>
+                        <span>+265 123 456 789</span>
+                    </li>
+                    <li>
+                        <i class="fas fa-envelope"></i>
+                        <span>info@milanzi.com</span>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Social Section -->
+            <div class="footer-social">
+                <h3 class="footer-heading">Follow Us</h3>
+                <div class="social-icons">
+                    <a href="#" class="facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="linkedin"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#" class="tiktok"><i class="fab fa-tiktok"></i></a>
+                    <a href="#" class="instagram"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bottom Section -->
+        <div class="footer-bottom">
+            <p>&copy; 2023 Milanzi. All rights reserved.</p>
+            <a href="#" class="privacy-link">Privacy Policy</a>
+        </div>
+    </footer>
+</body>
+</html>
