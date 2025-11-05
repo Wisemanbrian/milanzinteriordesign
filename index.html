@@ -387,98 +387,88 @@
 
 
  <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            // Video autoplay functionality
-            const video = document.getElementById("bgVideo");
-            if (video) {
-                video.setAttribute("muted", "");
-                video.muted = true;
-                video.setAttribute("playsinline", "");
-                video.setAttribute("webkit-playsinline", "");
-                video.setAttribute("autoplay", "");
-                video.autoplay = true;
-                video.loop = true;
+document.addEventListener("DOMContentLoaded", function () {
+  const video = document.getElementById("bgVideo");
 
-                const playPromise = video.play();
-                if (playPromise !== undefined) {
-                    playPromise
-                        .then(() => {
-                            console.log("✅ Video autoplayed successfully");
-                        })
-                        .catch((error) => {
-                            console.warn("⚠️ Autoplay blocked, waiting for user interaction...", error);
-                            const resumePlayback = () => {
-                                video.play();
-                                document.removeEventListener("touchstart", resumePlayback);
-                                document.removeEventListener("click", resumePlayback);
-                            };
-                            document.addEventListener("touchstart", resumePlayback, { once: true });
-                            document.addEventListener("click", resumePlayback, { once: true });
-                        });
-                }
-            }
+  // Ensure proper attributes for mobile Safari
+  video.setAttribute("muted", "");
+  video.muted = true;
+  video.setAttribute("playsinline", "");
+  video.setAttribute("webkit-playsinline", "");
+  video.setAttribute("autoplay", "");
+  video.autoplay = true;
+  video.loop = true;
 
-            // Initialize GSAP ScrollTrigger
-            gsap.registerPlugin(ScrollTrigger);
+  // Attempt autoplay immediately
+  const playPromise = video.play();
 
-            // Function to animate elements on scroll
-            function bigFadeInEveryScroll(selector, options = {}) {
-                const defaults = {
-                    opacity: 0,
-                    scale: 0.8,
-                    y: 100,
-                    duration: 1.5,
-                    ease: "power4.out",
-                    stagger: 0.3
-                };
-                
-                const settings = { ...defaults, ...options };
-                
-                gsap.utils.toArray(selector).forEach((el) => {
-                    gsap.fromTo(
-                        el,
-                        { opacity: settings.opacity, scale: settings.scale, y: settings.y },
-                        {
-                            opacity: 1,
-                            scale: 1,
-                            y: 0,
-                            duration: settings.duration,
-                            ease: settings.ease,
-                            stagger: settings.stagger,
-                            scrollTrigger: {
-                                trigger: el,
-                                start: "top 80%",
-                                end: "bottom 20%",
-                                toggleActions: "restart reverse restart reverse", 
-                                markers: false
-                            }
-                        }
-                    );
-                });
-            }
+  if (playPromise !== undefined) {
+    playPromise
+      .then(() => {
+        console.log("✅ Video autoplayed successfully");
+      })
+      .catch((error) => {
+        console.warn("⚠️ Autoplay blocked, waiting for user interaction...", error);
+        // iOS sometimes requires user gesture if autoplay fails
+        const resumePlayback = () => {
+          video.play();
+          document.removeEventListener("touchstart", resumePlayback);
+          document.removeEventListener("click", resumePlayback);
+        };
+        document.addEventListener("touchstart", resumePlayback, { once: true });
+        document.addEventListener("click", resumePlayback, { once: true });
+      });
+  }
+});
 
-            // Apply animations to footer sections
-            bigFadeInEveryScroll(".footer-container > div");
-            bigFadeInEveryScroll(".footer-bottom");
-            
-            // Example usage for other page elements (if they exist)
-            if (document.querySelector(".hero h1, .hero p, .hero a")) {
-                bigFadeInEveryScroll(".hero h1, .hero p, .hero a");
-            }
-            if (document.querySelector(".feature-item")) {
-                bigFadeInEveryScroll(".feature-item");
-            }
-            if (document.querySelector(".project-card")) {
-                bigFadeInEveryScroll(".project-card");
-            }
-            if (document.querySelector(".award-item")) {
-                bigFadeInEveryScroll(".award-item");
-            }
-            if (document.querySelector(".trusted-title, .trusted-text")) {
-                bigFadeInEveryScroll(".trusted-title, .trusted-text");
-            }
-        });
-    </script>
+
+gsap.registerPlugin(ScrollTrigger);
+
+function bigFadeInEveryScroll(selector, options = {}) {
+  const defaults = {
+    opacity: 0,
+    scale: 0.8,
+    y: 100,
+    duration: 1.5,
+    ease: "power4.out",
+    stagger: 0.3
+  };
+  
+  const settings = { ...defaults, ...options };
+  
+  gsap.utils.toArray(selector).forEach((el) => {
+    gsap.fromTo(
+      el,
+      { opacity: settings.opacity, scale: settings.scale, y: settings.y },
+      {
+        opacity: 1,
+        scale: 1,
+        y: 0,
+        duration: settings.duration,
+        ease: settings.ease,
+        stagger: settings.stagger,
+        scrollTrigger: {
+          trigger: el,
+          start: "top 80%",        // start when element reaches 80% from top
+          end: "bottom 20%",       // optional: how long the trigger lasts
+          toggleActions: "restart reverse restart reverse", 
+          markers: false
+        }
+      }
+    );
+  });
+}
+
+// Example usage:
+bigFadeInEveryScroll(".hero h1, .hero p, .hero a");
+bigFadeInEveryScroll(".feature-item");
+bigFadeInEveryScroll(".project-card");
+bigFadeInEveryScroll(".award-item");
+bigFadeInEveryScroll(".trusted-title, .trusted-text");
+bigFadeInEveryScroll(".footer-container > div");
+
+
+</script>
 
 </body>
 </html>
