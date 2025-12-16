@@ -38,7 +38,7 @@ position: relative;
   height: 40px;
   margin: 0 30px;
   /*filter: grayscale(100%);*/
-  opacity: 0.8;
+  opacity: 0.5;
   transition: transform 0.3s ease;
 }
 
