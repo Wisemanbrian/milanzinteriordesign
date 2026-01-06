@@ -1162,7 +1162,7 @@ margin-top: 70px;
         /* Extra Small Phones (≤ 480px) */
         @media (max-width: 480px) {
             .milanzi-footer {
-                padding: 50px 15px 15px;
+                padding: 0px 15px 15px;
             }
 
             .brand-title {
