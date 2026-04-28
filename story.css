@@ -1,0 +1,458 @@
+/* RESET */
+
+body{
+
+    font-family: 'Playfair Display', serif;
+
+}
+/* WRAPPER */
+.luxWrapA1 {
+  max-width: 1250px;
+  margin: auto;
+  padding: 70px 30px;
+}
+
+/* TOP TEXT */
+.luxTopA1 {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 60px;
+  margin-bottom: 50px;
+}
+
+.luxLeftTextA1 {
+  flex: 1.2;
+}
+
+.luxLeftTextA1 h1 {
+  font-size: 36px;
+  line-height: 1.35;
+  font-weight: 500;
+  letter-spacing: 1px;
+}
+
+.luxLeftTextA1 span {
+  font-style: italic;
+  color: #555;
+  font-weight: 400;
+}
+
+.luxRightTextA1 {
+  flex: 0.8;
+  max-width: 420px;
+}
+
+.luxRightTextA1 p {
+  font-size: 14px;
+  line-height: 1.7;
+  color: #666;
+}
+
+/* IMAGE ROW */
+.luxImagesRowA1 {
+  display: flex;
+  gap: 25px;
+  align-items: stretch;
+}
+
+/* BIG LEFT IMAGE */
+.luxImgBigA1 {
+  flex: 1.6;
+}
+
+.luxImgSmallA1 {
+  flex: 1;
+}
+
+/* IMAGES */
+.luxImgBigA1 img,
+.luxImgSmallA1 img {
+  width: 100%;
+  height: 420px;
+  object-fit: cover;
+  display: block;
+}
+
+/* RESPONSIVE */
+@media (max-width: 992px) {
+  .luxTopA1 {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .luxImagesRowA1 {
+    flex-wrap: wrap;
+  }
+
+  .luxImgBigA1 {
+    flex: 100%;
+  }
+
+  .luxImgSmallA1 {
+    flex: 1 1 calc(50% - 12px);
+  }
+
+  .luxImgBigA1 img,
+  .luxImgSmallA1 img {
+    height: 320px;
+  }
+}
+
+@media (max-width: 600px) {
+  .luxLeftTextA1 h1 {
+    font-size: 26px;
+  }
+
+  .luxImgSmallA1 {
+    flex: 100%;
+  }
+
+  .luxImgBigA1 img,
+  .luxImgSmallA1 img {
+    height: 260px;
+  }
+}
+
+
+.mi-story{
+  background:#fff;
+  font-family:'Inter',sans-serif;
+  color:#2b2b2b;
+  width:100%;
+  overflow:hidden;
+    font-family: 'Playfair Display', serif;
+
+}
+
+/* CONTAINER */
+.mi-container{
+  max-width:1150px;
+  margin:auto;
+  padding:60px 20px;
+  display:grid;
+  gap:40px;
+}
+
+/* GRID */
+.mi-grid{
+  display:grid;
+  grid-template-columns:60% 40%;
+  min-height:460px;
+  align-items:stretch;
+  gap: 12px;
+}
+
+.mi-grid.reverse{
+  grid-template-columns:40% 60%;
+}
+
+/* CARD */
+.mi-card{
+  position:relative;
+  background:#e7e3de;
+  padding:60px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  min-height:460px;
+  font-style: italic;
+}
+
+/* CORNER LINES */
+.mi-card::before{
+  content:"";
+  position:absolute;
+  top:28px;
+  right:28px;
+  width:70px;
+  height:1px;
+  background:#a6a29d;
+}
+
+.mi-card::after{
+  content:"";
+  position:absolute;
+  bottom:28px;
+  left:28px;
+  width:70px;
+  height:1px;
+  background:#a6a29d;
+}
+
+/* TEXT */
+.mi-label{
+  font-size:40px;
+  letter-spacing:4px;
+  text-transform:uppercase;
+  color:#363029;
+  margin-bottom:18px;
+}
+
+.mi-title{
+  font-family:'Playfair Display',serif;
+  font-size:52px;
+  font-weight:400;
+  line-height:1.1;
+  margin-bottom:25px;
+  color:#3d342e;
+}
+
+.mi-title-large{
+  font-family:'Playfair Display',serif;
+  font-size:34px;
+  font-weight:400;
+  line-height:1.35;
+  margin-bottom:22px;
+  color:#3d342e;
+  font-style: italic;
+}
+
+.mi-text{
+  font-size:15px;
+  line-height:1.9;
+  color:#555;
+  max-width:540px;
+}
+
+/* IMAGE */
+.mi-image{
+  height:460px;
+  overflow:hidden;
+  background:#ddd;
+}
+
+.mi-image img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:center;
+  display:block;
+  transition:transform .5s ease;
+}
+
+.mi-image:hover img{
+  transform:scale(1.03);
+}
+
+/* LOCATIONS */
+.mi-location-wrap{
+  margin-top:10px;
+}
+
+.mi-location{
+  display:flex;
+  gap:20px;
+  align-items:flex-start;
+  padding:12px 0;
+}
+
+.mi-location-icon{
+  width:34px;
+  height:34px;
+  min-width:34px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+.mi-location-icon svg{
+  width:21px;
+  height:21px;
+  fill:#555;
+}
+
+.mi-location-content strong{
+  display:block;
+  font-size:18px;
+  font-weight:400;
+  letter-spacing:1px;
+  text-transform:uppercase;
+  color:#4b3e35;
+  margin-bottom:8px;
+}
+
+.mi-location-content span{
+  display:block;
+  font-size:15px;
+  line-height:1.7;
+  color:#555;
+}
+
+.mi-divider{
+  width:65%;
+  height:1px;
+  background:#9d9389;
+  margin:22px 0;
+}
+
+/* CTA */
+.mi-cta{
+  background:#e7e3de;
+  text-align:center;
+  padding:80px 20px;
+}
+
+.mi-cta h2{
+  font-family:'Playfair Display',serif;
+  font-size:32px;
+  color:#3d342e;
+}
+
+.mi-cta h2 em{
+  font-style:italic;
+}
+
+.mi-cta p{
+  margin:18px 0 30px;
+  font-size:14px;
+  color:#555;
+}
+
+.mi-btn{
+  display:inline-block;
+  padding:13px 28px;
+  border:1px solid #333;
+  font-size:12px;
+  text-decoration:none;
+  color:#333;
+  transition:.3s ease;
+}
+
+.mi-btn:hover{
+  background:#333;
+  color:#fff;
+}
+
+/* TABLET */
+@media (max-width:900px){
+
+  .mi-grid,
+  .mi-grid.reverse{
+    display:flex;
+    min-height:auto;
+  }
+
+  .mi-grid{
+    flex-direction:column;
+  }
+
+  .mi-grid.reverse{
+    flex-direction:column-reverse;
+  }
+
+  .mi-card{
+    min-height:auto;
+    padding:45px 35px;
+  }
+
+  .mi-image{
+    width:100%;
+    height:360px;
+  }
+
+  .mi-image img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    object-position:center center;
+    border-radius:0;
+  }
+
+  .mi-title{
+    font-size:40px;
+  }
+
+  .mi-title-large{
+    font-size:28px;
+  }
+
+  .mi-divider{
+    width:100%;
+  }
+}
+
+/* MOBILE */
+@media (max-width:600px){
+
+  .mi-container{
+    padding:35px 15px;
+    gap:25px;
+  }
+
+  .mi-card{
+    padding:35px 25px;
+  }
+
+  .mi-image{
+    height:280px;
+    width:100%;
+  }
+
+  .mi-image img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    object-position:center;
+    display:block;
+  }
+
+  .mi-title{
+    font-size:30px;
+  }
+
+  .mi-title-large{
+    font-size:24px;
+  }
+
+  .mi-text{
+    font-size:14px;
+    line-height:1.8;
+  }
+
+  .mi-location{
+    gap:14px;
+  }
+
+  .mi-location-content strong{
+    font-size:16px;
+  }
+
+  .mi-location-content span{
+    font-size:14px;
+  }
+
+  .mi-cta{
+    padding:55px 20px;
+  }
+
+  .mi-cta h2{
+    font-size:26px;
+  }
+}
+
+/* SMALL MOBILE */
+@media (max-width:420px){
+
+  .mi-image{
+    height:240px;
+  }
+
+  .mi-card{
+    padding:28px 20px;
+  }
+
+  .mi-title{
+    font-size:26px;
+  }
+
+  .mi-title-large{
+    font-size:21px;
+  }
+
+  .mi-label{
+    font-size:10px;
+    letter-spacing:3px;
+  }
+
+}

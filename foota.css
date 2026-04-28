@@ -1,0 +1,176 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Playfair Display', serif;
+}
+
+body {
+  background: #fff;
+}
+
+/* Main Footer */
+.ft-footer {
+  background: #F2EFE9;
+  padding: 15px 80px 10px;
+  color: #5c554f;
+}
+
+/* Top Layout */
+.ft-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+/* Titles */
+.ft-footer h3 {
+  font-size: 20px;
+  letter-spacing: 1px;
+  margin-bottom: 30px;
+  font-weight: 400;
+}
+
+/* Newsletter */
+.ft-newsletter {
+  flex: 1.2;
+}
+
+.ft-form-row {
+  display: flex;
+  gap: 60px;
+  margin-bottom: 25px;
+}
+
+.ft-field {
+  flex: 1;
+}
+
+.ft-field label {
+  font-size: 11px;
+  letter-spacing: 1px;
+  color: #6e6761;
+  display: block;
+  margin-bottom: 6px;
+}
+
+.ft-field input {
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid #6e6761;
+  background: transparent;
+  padding: 6px 0;
+  outline: none;
+  font-size: 13px;
+}
+
+/* Button */
+.ft-btn {
+  margin-top: 10px;
+  background: #746B5F;
+  color: #fff;
+  border: none;
+  padding: 10px 28px;
+  font-size: 12px;
+  letter-spacing: 2px;
+  cursor: pointer;
+}
+
+.ft-btn:hover {
+  background: #5c554f;
+}
+
+/* Contact */
+.ft-contact {
+  width: 280px;
+}
+
+.ft-contact p {
+  font-size: 13px;
+  margin-bottom: 10px;
+}
+
+/* Bottom */
+.ft-bottom {
+  margin-top: 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Left block */
+.ft-left {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+}
+
+/* Logo */
+.ft-logo {
+  width: 30px;
+  height: 30px;
+}
+
+.ft-logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* Links */
+.ft-links {
+  display: flex;
+  gap: 50px;
+}
+
+.ft-links div {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-size: 11px;
+  letter-spacing: 1px;
+}
+
+/* Social */
+.ft-social {
+  display: flex;
+  gap: 18px;
+  font-size: 14px;
+}
+
+.ft-social i {
+  cursor: pointer;
+}
+
+/* Copyright */
+.ft-copy {
+  background: #7a726a;
+  color: #fff;
+  text-align: center;
+  padding: 14px;
+  font-size: 11px;
+  letter-spacing: 1px;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .ft-footer {
+    padding: 50px 25px;
+  }
+
+  .ft-top {
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .ft-form-row {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .ft-bottom {
+    flex-direction: column;
+    gap: 30px;
+    align-items: flex-start;
+  }
+}

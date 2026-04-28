@@ -13,21 +13,22 @@ body {
 
   line-height: 1.5;
   background-color: #fff;
-  color: #000;
+
   overflow-x: hidden;
 }
 
 /* ========== STATS SECTION ========== */
 .stats-section {
-  width: 100%;
+  width: auto;
   padding: 60px 20px;
-  background-color: #fff;
+  background-color: #f2efe9;;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
   gap: 40px;
   box-sizing: border-box;
   font-family: 'Times New Roman', Times, serif;
+  margin-inline: 60px;
 }
 
 /* ========== INDIVIDUAL STAT BLOCK ========== */
@@ -35,12 +36,13 @@ body {
   text-align: center;
   flex: 0 1 auto;
   min-width: 120px;
+  background-color: #f2efe9;
 }
 
 /* ========== STAT NUMBER ========== */
 .number {
   font-size: 58px;
-  font-weight: 900;
+  font-weight: 400;
   color: #4D4D4D;
   line-height: 1;
   margin: 0 0 8px 0;

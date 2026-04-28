@@ -1,0 +1,264 @@
+/* ===== RESET ===== */
+.mzv-sec, .mzv-sec *{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+/* ===== SECTION ===== */
+.mzv-sec{
+    width:100%;
+    background:#ffffff;
+    padding:20px 20px 42px;
+    font-family:'Cormorant Garamond', serif;
+}
+
+/* ===== CONTAINER ===== */
+.mzv-wrap{
+    max-width:900px;
+    margin:0 auto;
+    text-align:center;
+}
+
+/* ===== HEADING ===== */
+.mzv-title{
+    color:#544b46;
+    font-weight:400;
+    font-size:21px;
+    line-height:1.45;
+    letter-spacing:.2px;
+    margin-bottom:22px;
+    text-transform:uppercase;
+}
+
+.mzv-title span{
+    font-style:italic;
+    font-size:.9em;
+    text-transform:none;
+}
+
+/* ===== VIDEO ===== */
+.mzv-video-box{
+    max-width:875px;
+    margin:auto;
+    border-radius:12px;
+    overflow:hidden;
+    background:#ddd;
+}
+
+.mzv-video{
+    width:100%;
+    height:auto;
+    display:block;
+    object-fit:cover;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width:768px){
+    .mzv-title{
+        font-size:16px;
+    }
+
+    .mzv-sec{
+        padding:18px 14px 28px;
+    }
+}
+
+
+/* SECTION */
+        .milanzi_story_unique_section{
+            width:100%;
+            padding:120px;
+            margin-bottom: 100px;
+            
+        }
+
+        .milanzi_story_unique_container{
+            max-width:1400px;
+            margin:auto;
+        }
+
+        /* 60 / 40 layout */
+        .milanzi_story_unique_grid{
+            display:grid;
+            grid-template-columns:63% 37%;
+            gap:24px;
+            align-items:stretch;
+            height: 500px;
+        }
+
+        /* LEFT BOX */
+        .milanzi_story_unique_content{
+            background:#ddd9d3;
+            padding:38px 54px 50px;
+            position:relative;
+           
+            display:flex;
+            flex-direction:column;
+            justify-content:flex-start;
+        }
+
+        /* Decorative lines */
+        .milanzi_story_unique_topline{
+            position:absolute;
+            top:40px;
+            right:0;
+            width:190px;
+            height:1px;
+            background:#726c67;
+        }
+
+        .milanzi_story_unique_bottomline{
+            position:absolute;
+            left:0;
+            bottom:40px;
+            width:190px;
+            height:1px;
+            background:#726c67;
+        }
+
+        /* Small heading */
+        .milanzi_story_unique_small{
+            font-family:'Cormorant Garamond', serif;
+            font-size:30px;
+            font-weight:400;
+            color:#3f3935;
+            margin-bottom:8px;
+        }
+
+        /* Main heading */
+        .milanzi_story_unique_title{
+            font-family:'Cormorant Garamond', serif;
+            font-size:20px;
+            line-height:.95;
+            font-weight:400;
+            color:#3f3935;
+            text-transform:uppercase;
+            margin-bottom:20px;
+            max-width:760px;
+        }
+
+        /* Body copy */
+        .milanzi_story_unique_text{
+            font-size:15px;
+            line-height:1.8;
+            font-weight:300;
+            color:#645e58;
+            max-width:760px;
+        }
+
+        .milanzi_story_unique_text p{
+            margin-bottom:18px;
+        }
+
+        .milanzi_story_unique_text p:last-child{
+            margin-bottom:0;
+        }
+
+        /* IMAGE */
+        .milanzi_story_unique_image_wrap{
+            min-height:420px;
+            overflow:hidden;
+        }
+
+        .milanzi_story_unique_image{
+            width:100%;
+            height:100%;
+            object-fit:cover;
+            display:block;
+        }
+
+        /* Large screens */
+        @media (max-width:1200px){
+            .milanzi_story_unique_content{
+                min-height:390px;
+                padding:34px 40px 45px;
+            }
+
+            .milanzi_story_unique_image_wrap{
+                min-height:390px;
+            }
+
+            .milanzi_story_unique_title{
+                font-size:32px;
+            }
+
+            .milanzi_story_unique_text{
+                font-size:14px;
+            }
+        }
+
+        /* Tablet */
+        @media (max-width:992px){
+            .milanzi_story_unique_section{
+                padding:20px;
+            }
+
+            .milanzi_story_unique_grid{
+                grid-template-columns:1fr;
+                gap:20px;
+            }
+
+            .milanzi_story_unique_content{
+                min-height:auto;
+                padding:32px 28px 48px;
+            }
+
+            .milanzi_story_unique_image_wrap{
+                min-height:360px;
+            }
+
+            .milanzi_story_unique_title{
+                font-size:28px;
+                max-width:100%;
+            }
+
+            .milanzi_story_unique_text{
+                max-width:100%;
+            }
+
+            .milanzi_story_unique_topline,
+            .milanzi_story_unique_bottomline{
+                width:120px;
+            }
+        }
+
+        /* Mobile */
+        @media (max-width:576px){
+            .milanzi_story_unique_section{
+                padding:14px;
+            }
+
+            .milanzi_story_unique_content{
+                padding:24px 20px 42px;
+            }
+
+            .milanzi_story_unique_small{
+                font-size:22px;
+            }
+
+            .milanzi_story_unique_title{
+                font-size:22px;
+                line-height:1;
+                margin-bottom:16px;
+            }
+
+            .milanzi_story_unique_text{
+                font-size:13px;
+                line-height:1.75;
+            }
+
+            .milanzi_story_unique_image_wrap{
+                min-height:280px;
+            }
+
+            .milanzi_story_unique_topline{
+                top:24px;
+                width:80px;
+            }
+
+            .milanzi_story_unique_bottomline{
+                width:80px;
+                bottom:24px;
+            }
+        }

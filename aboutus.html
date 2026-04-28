@@ -7,384 +7,109 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="headerfooter.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+   <link rel="stylesheet" href="story.css">
+   <link rel="stylesheet" href="foota.css">
+   <link rel="stylesheet" href="styles.css">
+ 
   <style>
-    body {
-      margin: 0;
-      background-color: #fff;
-      font-family: 'Inter', sans-serif;
-      color: #222;
-      overflow-x: hidden;
-    }
-
-    /* HERO SECTION */
-    
-
-    .hero {
-  position: relative;
-  width: 100%;
-  height: 400px;
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  
-  color: white;
-}
-
-.hero::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: url('images/slides2.jpg') center center / cover no-repeat;
-  width: 100%;
-  height: 100%;
-  z-index: -1;
-  object-fit:cover;
-}
-
-    .hero-content {
-      position: relative;
-      z-index: 2;
-      padding-left: 100px;
-    }
-
-    .hero h5 {
-      font-size: 14px;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      font-weight: 400;
-      opacity: 0.9;
-      margin-bottom: 12px;
-    }
-
-    .hero h1 {
-      font-family: 'Playfair Display', serif;
-      font-size: 62px;
-      line-height: 1.15;
-      margin: 0;
-      font-weight: 700;
-    }
-
-    .hero h1 em {
-      font-style: italic;
-      font-weight: 400;
-      display: block;
-    }
-
-    /* STORY SECTION */
-    .story-section {
-      max-width: 1900px;
-      margin: 80px auto;
-      display: grid;
-      grid-template-columns: 1.1fr 0.9fr;
-      gap: 60px;
-      align-items: start;
-      padding: 0 60px;
-    }
-
-    .story-text h2 {
-      font-family: 'Playfair Display', serif;
-      font-size: 28px;
-      font-weight: 700;
-      color: #222;
-      margin-bottom: 25px;
-    }
-
-    .story-text h2 em {
-      font-style: italic;
-      font-weight: 400;
-    }
-
-    .story-text p {
-      font-size: 15px;
-      line-height: 1.9;
-      color: #444;
-      margin-bottom: 15px;
-      text-align: justify;
-    }
-
-    .story-text p b {
-      font-weight: 600;
-      color: #222;
-    }
-
-    .story-text p em {
-      font-family: 'Playfair Display', serif;
-      font-style: italic;
-      font-weight: 400;
-    }
-
-    .story-image img {
-      width: 100%;
-      border-radius: 10px;
-      object-fit: cover;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.08);
-      height: 400px;
-    }
-
-    /* RESPONSIVE DESIGN */
-    @media (max-width: 900px) {
-      .hero {
-        height: 300px;
-        
-      }
-
-      .hero h1 {
-        font-size: 40px;
-      }
-
-      .story-section {
-        grid-template-columns: 1fr;
-        padding: 0 25px;
-        gap: 40px;
-      }
-    }
-
-
-     .team-section {
-      text-align: center;
-      padding: 0px 20px;
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-
-    .team-section h2 {
-      font-family: "Playfair Display", serif;
-      font-size: 32px;
-      color: #1a1a1a;
-      margin-bottom: 10px;
-      font-weight: 700;
-    }
-
-    .team-section h2 em {
-      font-style: italic;
-      font-weight: 400;
-    }
-
-    .team-section p {
-      color: #555;
-      font-size: 15px;
-      line-height: 1.8;
-      max-width: 700px;
-      margin: 0 auto 60px;
-    }
-
-    .team-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 30px;
-      justify-items: center;
-    }
-
-    .team-card {
-      background: #f5f5f5;
-      border-radius: 12px;
-      overflow: hidden;
-      position: relative;
-      width: 100%;
-      max-width: 250px;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    .team-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.08);
-    }
-
-    .team-card img {
-      width: 100%;
-      height: 280px;
-      object-fit: cover;
-      display: block;
-    }
-
-    .team-info {
-      position: absolute;
-      bottom: 16px;
-      left: 50%;
-      transform: translateX(-50%);
-      background: #fff;
-      border-radius: 5px;
-      width: 60%;
-      max-width: 220px;
-      height: 50px;
-      padding: 10px 12px;
-      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
-      text-align: center;
-    }
-
-    .team-info h3 {
-      font-size: 15px;
-      font-weight: 600;
-      margin: 0;
-      color: #111;
-    }
-
-    .team-info p {
-      font-size: 13px;
-      color: #555;
-      margin-top: 4px;
-    }
-
-    @media (max-width: 768px) {
-      .team-section {
-        padding: 0px 16px;
-      }
-      .team-card img {
-        height: 260px;
-      }
-      .team-info {
-        width: 85%;
-      }
-    }
-
-    @media (max-width: 480px) {
-      .team-grid {
-        grid-template-columns: 1fr 1fr;
-        gap: 20px;
-      }
-      .team-card {
-        max-width: 100%;
-      }
-      .team-card img {
-        height: 220px;
-      }
-      .team-info {
-        bottom: 12px;
-        width: 88%;
-        padding: 8px 10px;
-      }
-      .team-info h3 {
-        font-size: 13.5px;
-      }
-      .team-info p {
-        font-size: 11.5px;
-      }
-    }
-
-    .join-team {
-  background-color: #1f1f1f;
-  border-radius: 10px;
-  text-align: center;
-  color: #fff;
-  max-width: 700px;
-  margin: 80px auto;
-  padding: 50px 30px;
-  position: relative;
-  box-shadow: 0 4px 0 0 #ffef00; /* Yellow bottom border */
-}
-
-.join-content h2 {
-  font-family: 'Playfair Display', serif;
-  font-size: 2rem;
-  font-weight: 700;
-  margin-bottom: 20px;
-}
-
-.join-content h2 em {
-  font-style: italic;
-  font-weight: 400;
-}
-
-.join-content p {
-  color: #e0e0e0;
-  font-size: 0.95rem;
-  line-height: 1.6;
-  max-width: 600px;
-  margin: 0 auto 25px;
-}
-
-.join-content button {
-  background-color: #fff;
-  color: #000;
-  border: none;
-  padding: 10px 20px;
-  border-radius: 6px;
-  cursor: pointer;
-  font-size: 0.9rem;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
-  transition: all 0.3s ease;
-}
-
-.join-content button:hover {
-  background-color: #f5f5f5;
-  transform: translateY(-2px);
-}
-
-/* PROFESSIONAL FADE-IN ANIMATIONS - ADD TO <head> */
-.fade-in-element,
-[class*="card"],
-.hero-content,
-.story-text,
-.join-content,
-.promise-card,
-.service-body,
-.project-card,
-.furniture-card,
-.team-card,
-.contact-info,
-.contact-form {
-  opacity: 0;
-  transform: translateY(40px);
-  transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-}
-
-.fade-in-element.fade-in-visible,
-[class*="card"].fade-in-visible,
-.hero-content.fade-in-visible,
-.story-text.fade-in-visible,
-.join-content.fade-in-visible,
-.promise-card.fade-in-visible,
-.service-body.fade-in-visible,
-.project-card.fade-in-visible,
-.furniture-card.fade-in-visible,
-.team-card.fade-in-visible,
-.contact-info.fade-in-visible,
-.contact-form.fade-in-visible {
-  opacity: 1 !important;
-  transform: translateY(0) !important;
-}
-
-/* STAGGER DELAYS FOR GRIDS (Auto-applied by JS) */
-.fade-in-grid > *:nth-child(1) { transition-delay: 0.1s; }
-.fade-in-grid > *:nth-child(2) { transition-delay: 0.2s; }
-.fade-in-grid > *:nth-child(3) { transition-delay: 0.3s; }
-.fade-in-grid > *:nth-child(4) { transition-delay: 0.4s; }
-.fade-in-grid > *:nth-child(5) { transition-delay: 0.5s; }
-.fade-in-grid > *:nth-child(6) { transition-delay: 0.6s; }
-.fade-in-grid > *:nth-child(7) { transition-delay: 0.7s; }
-.fade-in-grid > *:nth-child(8) { transition-delay: 0.8s; }
-.fade-in-grid > *:nth-child(9) { transition-delay: 0.9s; }
-
-/* ABOVE-THE-FOLD INSTANT ANIMATION */
-.hero,
-.portfolio-header,
-.services-section h2,
-.philosophy-section h2 {
-  opacity: 1 !important;
-  transform: none !important;
-}
-
-/* REDUCED MOTION SUPPORT (WCAG AAA) */
-@media (prefers-reduced-motion: reduce) {
-  .fade-in-element,
-  [class*="card"],
-  .hero-content,
-  .story-text,
-  .join-content,
-  .promise-card,
-  .service-body,
-  .project-card,
-  .furniture-card,
-  .team-card {
-    opacity: 1 !important;
-    transform: none !important;
-    transition: none !important;
+  /* STORY HERO SECTION */
+  .story-hero {
+    position: relative;
+    width: 100%;
+    height: 400px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    padding: 20px;
   }
-}
 
-  </style>
+  .story-hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: url('images/bacckground.PNG') center center / cover no-repeat;
+    z-index: -1;
+  }
+
+  /* CONTENT */
+  .story-hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 900px;
+  }
+
+  /* SMALL TEXT */
+  .story-hero-subtitle {
+    font-size: 14px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-weight: 400;
+    opacity: 0.9;
+    margin-bottom: 12px;
+  }
+
+  /* MAIN TITLE */
+  .story-hero-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 62px;
+    line-height: 1.15;
+    margin: 0;
+    font-weight: 700;
+  }
+
+  .story-hero-title em {
+    font-style: italic;
+    font-weight: 400;
+    display: block;
+  }
+
+  /* TABLETS */
+  @media (max-width: 992px) {
+    .story-hero {
+      height: 350px;
+    }
+
+    .story-hero-title {
+      font-size: 48px;
+    }
+  }
+
+  /* PHONES */
+  @media (max-width: 600px) {
+    .story-hero {
+      height: 280px;
+      padding: 10px;
+    }
+
+    .story-hero-subtitle {
+      font-size: 12px;
+      letter-spacing: 1.5px;
+    }
+
+    .story-hero-title {
+      font-size: 32px;
+      line-height: 1.2;
+    }
+  }
+
+  /* SMALL PHONES */
+  @media (max-width: 400px) {
+    .story-hero {
+      height: 240px;
+    }
+
+    .story-hero-title {
+      font-size: 26px;
+    }
+  }
+</style>
+
+
 </head>
 <body>
 
@@ -394,7 +119,7 @@
         <nav class="nav-links-left">
             <a href="aboutus.html" class="nav-link">About</a>
             <a href="portifolio.html" class="nav-link">Portfolio</a>
-            <a href="contact.html" class="nav-link">Contact us</a>
+            <a href="index.html" class="nav-link">PROJECT ENQUIRY</a>
         </nav>
         <a href="index.html" class="logo">
             <img src="loggg.png" alt="SpaceCraft Logo">
@@ -414,7 +139,7 @@
             <a href="services.html" class="nav-link">Services</a>
             <a href="portifolio.html" class="nav-link">Portfolio</a>
            <a href="furniture.html" class="nav-link">Furniture Collection </a>
-            <a href="contact.html" class="nav-link">Contact us</a>
+            <a href="index.html" class="nav-link">PROJECT ENQUIRY</a>
              <a href="samantha.html" class="nav-link">Samantha</a>
         </nav>
     </div>
@@ -422,33 +147,48 @@
 <br><br>
 
   <!-- HERO SECTION -->
-  <section class="hero">
-    <div class="hero-content">
-      <h5>THE COMPANY</h5>
-      <h1>ABOUT<br>MILANZI <em>Interiors</em></h1>
-    </div>
-  </section>
+<section class="story-hero">
+  <div class="story-hero-content">
+    <h5 class="story-hero-subtitle">THE COMPANY</h5>
+    <h1 class="story-hero-title">OUR STORY</h1>
+  </div>
+</section>
 
-  <!-- STORY SECTION -->
-  <section class="story-section">
-    <div class="story-text">
-      <h2><em>our</em> STORY</h2>
-      <p>
-        Founded In 2020 By <b>Samantha <em>Heaven Milanzi</em></b>, Milanzi Interiors Has Become One Of Malawi’s Most Reputable Design Studios. Known For Its Eclectic, Sustainable, And Soulful Approach, The Firm Delivers One-Of-A-Kind Spaces Defined By Detail, <b>Craftsmanship</b>, And Authenticity.
-      </p>
-      <p>
-        With Over 8 Years Of Industry Experience, Our Team Brings A Unique Blend Of International Design Trends And Deep Appreciation For Malawian Culture And Craftsmanship.
-      </p>
-      <p>
-        Every Project Is An Opportunity To Create Something Extraordinary—Spaces That Don’t Just Look Beautiful, But Feel Right, Function Seamlessly, And Tell A Meaningful Story.
-      </p>
+  
+<section class="luxWrapA1">
+
+  <!-- TOP CONTENT -->
+  <div class="luxTopA1">
+    <div class="luxLeftTextA1">
+      <h1>
+        WE <span>create</span> LUXURY INTERIORS <span>that</span>
+        STAND <span>the</span> TEST <span>of</span> TIME
+      </h1>
     </div>
 
-    <div class="story-image">
-      <img src="imagenan.png" alt="Milanzi Interiors Founder">
+    <div class="luxRightTextA1">
+      <p>
+        Our interiors embody comfort, sophistication, and practicality. Milanzi Interiors is a premium interior design studio operating in Malawi and South Africa, specialising in bespoke residential and commercial interiors for private clients and developers across the region and beyond.
+      </p>
     </div>
-  </section>
+  </div>
 
+  <!-- IMAGE ROW -->
+  <div class="luxImagesRowA1">
+    <div class="luxImgBigA1">
+      <img src="images/aboutnew.png" alt="">
+    </div>
+
+    <div class="luxImgSmallA1">
+      <img src="images/aboutnew1.png" alt="">
+    </div>
+
+    <div class="luxImgSmallA1">
+      <img src="images/aboutnew2.png" alt="">
+    </div>
+  </div>
+
+</section>
   <!-- <section class="team-section">
     <h2><em>Meet</em> Our Team</h2>
     <p>A Collective Of Talented Designers, Craftsmen, And Visionaries Dedicated To Bringing Your Spaces To Life.</p>
@@ -488,88 +228,203 @@
     </div>
   </section> -->
 
-   <section class="join-team">
-  <div class="join-content">
-    <h2><em>Join</em> Our Team</h2>
-    <p>
-      We’re always looking for talented individuals who share our passion for 
-      sustainable, innovative design. If you’re ready to create something 
-      extraordinary, we’d love to hear from you.
-    </p>
-    <button>View Opportunities</button>
-  </div>
+ <section class="mi-story">
+<div class="mi-container">
 
-  <script src="animationcore.js"></script>
-</section>
+  <!-- OUR STORY -->
+  <div class="mi-grid">
+    <div class="mi-card">
+      <div class="mi-label">OUR STORY</div>
 
-<br> <br>
-<footer class="milanzi-footer">
-  <div class="footer-container">
+      <p class="mi-text">
+       Milanzi Interiors is a Multi award-winning Malawian interior design firm known for its quality craftsmanship and renowned for its eclectic, sustainable, and soulful approach to design. Reputable for capturing the heart and soul of every project in masterful design to detail.
 
-    <!-- Brand -->
-    <div class="footer-brand">
-      <h2 class="brand-title">Milanzi Interiors</h2>
-      <p class="brand-tagline">
-        Eclectic. Sustainable. Soulful.<br>
-        Malawi's Award-Winning Luxury<br>
-        Interior Design Studio.
+
+        <br><br>
+Founded in 2020 by Samantha Heaven Milanzi, Milanzi Interiors the full service Turnkey firm has pushed the boundaries of interior design trends, establishing itself as a fearless leader in the creation of truly one-of-a-kind spaces.
+        
       </p>
     </div>
 
-    <!-- Quick Links -->
-    <div class="footer-links">
-      <h3 class="footer-heading">Quick Links</h3>
-      <ul>
-        <li><a href="#">About Us</a></li>
-        <li><a href="#">Our Services</a></li>
-        <li><a href="#">Portfolio</a></li>
-        <li><a href="#">Furniture Collection</a></li>
-      </ul>
+    <div class="mi-image">
+      <img src="images/samastory.png" alt="">
+    </div>
+  </div>
+
+  <!-- DESIGN -->
+  <div class="mi-grid reverse">
+    <div class="mi-image">
+      <img src="images/storyart.png" alt="">
     </div>
 
-    <!-- Contact -->
-    <div class="footer-contact">
-      <h3 class="footer-heading">Contact</h3>
-      <ul>
-        <li>
-          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5S10.62 6.5 12 6.5s2.5 1.12 2.5 2.5S13.38 11.5 12 11.5z"/>
-          </svg>
-          Lilongwe, Malawi
-        </li>
-        <li>
-          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57 1.1 0 2 .9 2 2V20c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h3c1.1 0 2 .9 2 2 0 1.24-.2 2.45-.57 3.57-.12.35-.03.75.24 1.02l-2.2 2.2z"/>
-          </svg>
-          +265 (0) 888 877 264
-        </li>
-        <li>
-          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
-          </svg>
-          hello@milanzigroupmw.com
-        </li>
-      </ul>
-    </div>
+    <div class="mi-card">
+      <div class="mi-label">OUR VISION & PHILOSOPHY</div>
 
-    <!-- Social -->
-    <div class="footer-social">
-      <h3 class="footer-heading">Follow Us</h3>
-      <div class="social-icons">
-        <a href="#" class="facebook"><i class="fab fa-facebook-f"></i></a>
-        <a href="#" class="twitter"><i class="fab fa-twitter"></i></a>
-        <a href="#" class="linkedin"><i class="fab fa-linkedin-in"></i></a>
-        <a href="#" class="tiktok"><i class="fab fa-tiktok"></i></a>
+      <h2 class="mi-title-large">
+        Design is more than aesthetics. It’s purpose,
+        emotion, and experience.
+      </h2>
+
+      <p class="mi-text">
+       We fuse functionality, originality, and meaning to create spaces that tell stories. Every project is an opportunity to craft an environment that not only looks beautiful but enhances the way you live, work, and feel. Our approach honors both commercial and residential needs, always with an eye for detail and a commitment to excellence.
+      </p>
+    </div>
+  </div>
+
+  <!-- LOCATIONS -->
+  <div class="mi-grid">
+    <div class="mi-card">
+
+      <div class="mi-label">LOCATIONS</div>
+      <h2 class="mi-title">Our Branches</h2>
+
+      <div class="mi-location-wrap">
+
+        <div class="mi-location">
+          <div class="mi-location-icon">
+            <svg viewBox="0 0 24 24">
+              <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5A2.5 2.5 0 1 1 12 6a2.5 2.5 0 0 1 0 5.5z"/>
+            </svg>
+          </div>
+
+          <div class="mi-location-content">
+            <strong>Lilongwe Branch</strong>
+            <span>Wenela Complex, Murry Road, Lilongwe</span>
+          </div>
+        </div>
+
+        <div class="mi-divider"></div>
+
+        <div class="mi-location">
+          <div class="mi-location-icon">
+            <svg viewBox="0 0 24 24">
+              <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5A2.5 2.5 0 1 1 12 6a2.5 2.5 0 0 1 0 5.5z"/>
+            </svg>
+          </div>
+
+          <div class="mi-location-content">
+            <strong>Blantyre Branch</strong>
+            <span>Ginnery Corner Sharma crossing, Johnson road, Blantyre</span>
+          </div>
+        </div>
+
       </div>
     </div>
 
+    <div class="mi-image">
+      <img src="images/storyyy.png" alt="">
+    </div>
   </div>
 
-  <div class="footer-bottom">
-    <p>© 2025 Milanzi Interiors. All Rights Reserved.</p>
-   
+  <!-- TEAM -->
+  <div class="mi-grid reverse">
+    <div class="mi-image">
+      <img src="images/storyteam.png" alt="">
+    </div>
+
+    <div class="mi-card">
+      <div class="mi-label">WEALTH OF EXPERTISE</div>
+
+      <h2 class="mi-title-large">Our Team</h2>
+
+      <p class="mi-text">
+        Great design is born from collaboration with a team whose expertise aligns seamlessly
+with your vision. At Milanzi Interiors, we are committed to delivering a design experience
+that is both highly professional and genuinely approachable, ensuring the journey is as
+smooth, engaging, and inspiring as the final result. 
+
+      </p>
+ <br> 
+      <p>Our multidisciplinary team includes interior designers, architectural collaborators, and
+experienced project coordinators, allowing us to deliver comprehensive, full-service
+design solutions. Supported by a carefully curated network of trusted contractors,
+artisans, and suppliers, each project is executed with exceptional attention to detail,
+craftsmanship, and quality bringing every concept to life with precision and authenticity.</p>
+    </div>
   </div>
+
+  <!-- CTA -->
+  <div class="mi-cta">
+    <h2><em>Join</em> Our Team</h2>
+
+    <p>
+     We're always looking for talented individuals who <br>share our passion for 
+     sustainable, innovative design. <br>If you're ready to create something extraordinary, 
+     we'd love to hear from you.
+    </p>
+
+    <a href="#" class="mi-btn">VIEW OPPORTUNITIES →</a>
+  </div>
+
+</div>
+</section>
+
+
+<footer class="ft-footer">
+
+  <div class="ft-top">
+
+    <div class="ft-newsletter">
+      <h3>NEWSLETTER</h3>
+
+      <div class="ft-form-row">
+        <div class="ft-field">
+          <label>NAME:</label>
+          <input type="text">
+        </div>
+
+        <div class="ft-field">
+          <label>EMAIL:</label>
+          <input type="email">
+        </div>
+      </div>
+
+      <button class="ft-btn">— SUBSCRIBE —</button>
+    </div>
+
+    <div class="ft-contact">
+      <h3>CONTACT</h3>
+      <p>HELLO@MILANZIGROUPMW.COM</p>
+      <p>+265 (0) 888 877 264</p>
+    </div>
+
+  </div>
+
+  <div class="ft-bottom">
+
+    <div class="ft-left">
+
+      <div class="ft-logo">
+        <img src="loggg.png" alt="Logo">
+      </div>
+
+      <div class="ft-links">
+        <div>
+          <span>ABOUT</span>
+          <span>ENQUIRE</span>
+          <span>PRIVACY POLICY</span>
+        </div>
+        <div>
+          <span>PORTFOLIO</span>
+          <span>PRESS</span>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="ft-social">
+      <i class="fab fa-instagram"></i>
+      <i class="fab fa-youtube"></i>
+      <i class="fab fa-tiktok"></i>
+    </div>
+
+  </div>
+
 </footer>
+
+<div class="ft-copy">
+  COPYRIGHT © MILANZ INTERIORS 2026 ALL RIGHTS RESERVED.
+</div>
 
     <script src="main.js"></script>
 

@@ -1,289 +1,143 @@
- 
-    body {
-      margin: 0;
-           font-family: 'Playfair Display', serif;
-
-      background: #fff;
-      color: #333;
-      line-height: 1.6;
-    }
-
-    .fame {
-      text-decoration: none;
-      color: #555;
-      font-size: 14px;
-      display: inline-block;
-      margin: 40px 0 60px 8%;
-      transition: 0.2s;
-    }
-
-    .fame:hover {
-      color: #000;
-    }
-
-    /* --- HERO SECTION --- */
-    .hero {
-      position: relative;
-      max-width: 860px;
-      margin: 0 auto;
-      border-radius: 18px;
-      overflow: hidden;
-      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
-    }
-
-    .slide {
-      display: none;
-      position: relative;
-      transition: opacity 0.6s ease;
-    }
-
-    .slide img {
-      width: 100%;
-      height: auto;
-      display: block;
-    }
-
-    .active {
-      display: block;
-    }
-
-    .view-gallery-btn {
-      position: absolute;
-      top: 15px;
-      left: 15px;
-      background: #fff;
-      border: none;
-      border-radius: 8px;
-      padding: 6px 14px;
-      font-size: 13px;
-      font-weight: 500;
-      color: #111;
-      cursor: pointer;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-      transition: all 0.2s ease;
-    }
-
-    .view-gallery-btn:hover {
-      background: #111;
-      color: #fff;
-    }
-
-    .views {
-      position: absolute;
-      top: 15px;
-      right: 15px;
-      background: rgba(0, 0, 0, 0.55);
-      color: #fff;
-      padding: 4px 12px;
-      border-radius: 8px;
-      font-size: 13px;
-      font-weight: 500;
-    }
-
-    .arrow {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      background: rgba(255, 255, 255, 0.8);
-      border: none;
-      border-radius: 50%;
-      width: 34px;
-      height: 34px;
-      font-size: 18px;
-      font-weight: bold;
-      color: #444;
-      cursor: pointer;
-      transition: all 0.3s ease;
-    }
-
-    .arrow:hover {
-      background: #111;
-      color: #fff;
-    }
-
-    .arrow.left { left: 18px; }
-    .arrow.right { right: 18px; }
-
-    .dots {
-      position: absolute;
-      bottom: 15px;
-      width: 100%;
-      display: flex;
-      justify-content: center;
-      gap: 6px;
-      flex-wrap: wrap;
-    }
-
-    .dot {
-      width: 8px;
-      height: 8px;
-      border-radius: 50%;
-      background: rgba(255, 255, 255, 0.6);
-      cursor: pointer;
-      transition: all 0.3s ease;
-    }
-
-    .dot.active {
-      background: #fff;
-      transform: scale(1.2);
-    }
-
-    /* --- PROJECT DETAILS --- */
-    .project-details {
-      max-width: 860px;
-      margin: 35px auto 60px;
-      text-align: left;
-      padding: 0 10px;
-    }
-
-    .project-meta {
-      color: #666;
-      font-size: 14px;
-      margin-bottom: 8px;
-    }
-
-    .project-title {
-      font-family: 'Playfair Display', serif;
-      font-size: 38px;
-      font-weight: 600;
-      color: #222;
-      margin: 0;
-    }
-
-    .project-title em {
-      font-style: italic;
-      font-weight: 600;
-    }
-
-    .project-sub {
-      font-size: 15px;
-      color: #666;
-      margin-top: 10px;
-      letter-spacing: 0.3px;
-    }
-
-    @media (max-width: 768px) {
-      a {
-        margin-left: 5%;
-      }
-      .project-title {
-        font-size: 30px;
-      }
-    }
-
-    /* --- CLIENT BRIEF SECTION --- */
-    .client-brief {
-      max-width: 860px;
-      margin: 0 auto 90px;
-      display: flex;
-      justify-content: space-between;
-      gap: 60px;
-      padding: 35px 0;
-      border-top: 1px solid #ddd;
-      border-bottom: 1px solid #ddd;
-    }
-
-    .client-brief h3 {
-      font-family: 'Playfair Display', serif;
-      font-size: 18px;
-      color: #222;
-      font-weight: 600;
-      margin-bottom: 10px;
-    }
-
-    .client-brief h3 em {
-      font-style: italic;
-      font-weight: 600;
-    }
-
-    .client-brief p {
-      font-family: 'Inter', sans-serif;
-      color: #444;
-      font-size: 14.5px;
-      line-height: 1.8;
-      margin-bottom: 24px;
-    }
-
-    .brief-left, .brief-right {
-      flex: 1;
-    }
-
-    @media (max-width: 768px) {
-      .client-brief {
-        flex-direction: column;
-        gap: 30px;
-      }
-    }
-
-    /* PROFESSIONAL FADE-IN ANIMATIONS - ADD TO <head> */
-.fade-in-element,
-[class*="card"],
-.hero-content,
-.story-text,
-.join-content,
-.promise-card,
-.service-body,
-.project-card,
-.furniture-card,
-.team-card,
-.contact-info,
-.contact-form {
-  opacity: 0;
-  transform: translateY(40px);
-  transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+/* SECTION */
+.sparc-projects{
+    width:100%;
+    padding:55px 6% 45px;
+    background:#efefef;
 }
 
-.fade-in-element.fade-in-visible,
-[class*="card"].fade-in-visible,
-.hero-content.fade-in-visible,
-.story-text.fade-in-visible,
-.join-content.fade-in-visible,
-.promise-card.fade-in-visible,
-.service-body.fade-in-visible,
-.project-card.fade-in-visible,
-.furniture-card.fade-in-visible,
-.team-card.fade-in-visible,
-.contact-info.fade-in-visible,
-.contact-form.fade-in-visible {
-  opacity: 1 !important;
-  transform: translateY(0) !important;
+/* TOP TITLE */
+.sparc-heading{
+    text-align:center;
+    font-family:Georgia, serif;
+    font-size:18px;
+    font-weight:300;
+    color:#6f675f;
+    letter-spacing:.3px;
+    margin-bottom:38px;
+    text-transform:uppercase;
 }
 
-/* STAGGER DELAYS FOR GRIDS (Auto-applied by JS) */
-.fade-in-grid > *:nth-child(1) { transition-delay: 0.1s; }
-.fade-in-grid > *:nth-child(2) { transition-delay: 0.2s; }
-.fade-in-grid > *:nth-child(3) { transition-delay: 0.3s; }
-.fade-in-grid > *:nth-child(4) { transition-delay: 0.4s; }
-.fade-in-grid > *:nth-child(5) { transition-delay: 0.5s; }
-.fade-in-grid > *:nth-child(6) { transition-delay: 0.6s; }
-.fade-in-grid > *:nth-child(7) { transition-delay: 0.7s; }
-.fade-in-grid > *:nth-child(8) { transition-delay: 0.8s; }
-.fade-in-grid > *:nth-child(9) { transition-delay: 0.9s; }
-
-/* ABOVE-THE-FOLD INSTANT ANIMATION */
-.hero,
-.portfolio-header,
-.services-section h2,
-.philosophy-section h2 {
-  opacity: 1 !important;
-  transform: none !important;
+/* GRID */
+.sparc-grid{
+    max-width:1180px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:repeat(3, 1fr);
+    gap:24px;
 }
 
-/* REDUCED MOTION SUPPORT (WCAG AAA) */
-@media (prefers-reduced-motion: reduce) {
-  .fade-in-element,
-  [class*="card"],
-  .hero-content,
-  .story-text,
-  .join-content,
-  .promise-card,
-  .service-body,
-  .project-card,
-  .furniture-card,
-  .team-card {
-    opacity: 1 !important;
-    transform: none !important;
-    transition: none !important;
-  }
+/* CARD */
+.sparc-card{
+    position:relative;
 }
-  
+
+/* IMAGE */
+.sparc-img-box{
+    position:relative;
+    width:100%;
+    height:520px; /* restored tall image height */
+    overflow:hidden;
+    background:#ddd;
+}
+
+.sparc-img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    display:block;
+    transition:.45s ease;
+}
+
+.sparc-card:hover .sparc-img{
+    transform:scale(1.04);
+}
+
+/* first image overlay */
+.sparc-view{
+    position:absolute;
+    inset:0;
+    background:rgba(0,0,0,.23);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+.sparc-view::before{
+    content:"";
+    position:absolute;
+    top:18px;
+    left:18px;
+    right:18px;
+    bottom:18px;
+    border:1px solid rgba(255,255,255,.38);
+}
+
+.sparc-view span{
+    position:relative;
+    z-index:2;
+    color:white;
+    font-family:Georgia, serif;
+    font-size:18px;
+    font-weight:300;
+    letter-spacing:.3px;
+}
+
+/* TEXT BELOW */
+.sparc-info{
+    text-align:center;
+    padding-top:26px;
+}
+
+.sparc-name{
+    font-family:Georgia, serif;
+    font-size:22px;
+    font-weight:300;
+    color:#736a63;
+    letter-spacing:.2px;
+    margin-bottom:8px;
+    text-transform:uppercase;
+}
+
+.sparc-location{
+    font-family:Georgia, serif;
+    font-size:11px;
+    font-weight:300;
+    color:#857d76;
+    letter-spacing:.7px;
+    text-transform:uppercase;
+}
+
+/* tablet */
+@media(max-width:992px){
+    .sparc-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .sparc-img-box{
+        height:470px;
+    }
+}
+
+/* mobile */
+@media(max-width:768px){
+    .sparc-projects{
+        padding:45px 25px;
+    }
+
+    .sparc-grid{
+        grid-template-columns:1fr;
+        gap:30px;
+    }
+
+    .sparc-img-box{
+        height:420px;
+    }
+
+    .sparc-heading{
+        font-size:16px;
+    }
+
+    .sparc-name{
+        font-size:20px;
+    }
+}

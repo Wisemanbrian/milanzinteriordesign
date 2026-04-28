@@ -10,12 +10,273 @@
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <!-- Stylesheet -->
-  <link rel="stylesheet" href="style.css" />
+  
   <link rel="stylesheet" href="headerfooter.css" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link rel="stylesheet" href="stylestesting.css">
+  <link rel="stylesheet" href="portifolio.css">
+  <link rel="stylesheet" href="foota.css">
+  <link rel="stylesheet" href="styles.css">
+  
 
+ <style>
 
+html,
+body{
+    width:100%;
+    overflow-x:hidden;
+    background:#ffffff;
+    font-family:Arial, sans-serif;
+}
+
+/* ================= HERO SECTION ================= */
+
+.sparc-hero-wrap{
+    position:relative;
+    width:100%;
+    height:60vh;
+    min-height:520px;
+    max-height:760px;
+    background:url("images/Century group office-Untitled-20230711-215233_Watermarked.jpg") center center/cover no-repeat;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    overflow:hidden;
+    margin-bottom: 40px;
+   
+    
+}
+
+.sparc-hero-overlay{
+    position:absolute;
+    inset:0;
+    background:rgba(0,0,0,.18);
+}
+
+.sparc-hero-content{
+    position:relative;
+    z-index:2;
+    width:80%;
+    max-width:1200px;
+    margin-top:80px;
+    text-align:center;
+    color:#fff;
+}
+
+.sparc-hero-subtitle{
+    display:block;
+    margin-bottom:10px;
+    font-family:Georgia, serif;
+    font-size:20px;
+    font-weight:400;
+    letter-spacing:.5px;
+}
+
+.sparc-hero-title{
+    margin-bottom:28px;
+    font-family:"Times New Roman", serif;
+    font-size:36px;
+    font-weight:300;
+    line-height:1.1;
+    letter-spacing:1px;
+    text-transform:uppercase;
+}
+
+.sparc-hero-btn{
+    display:inline-flex;
+    align-items:center;
+    gap:14px;
+    padding:14px 38px;
+    background:#7b6f62;
+    color:#fff;
+    text-decoration:none;
+    font-size:18px;
+    letter-spacing:.5px;
+    transition:.3s ease;
+}
+
+.sparc-hero-btn span{
+    width:18px;
+    height:1px;
+    background:#fff;
+}
+
+.sparc-hero-btn:hover{
+    background:#5d5145;
+}
+
+.sparc-scroll-down{
+    margin-top:55px;
+    font-size:48px;
+    font-weight:100;
+    animation:sparcBounce 1.5s infinite;
+}
+
+@keyframes sparcBounce{
+    0%,20%,50%,80%,100%{transform:translateY(0);}
+    40%{transform:translateY(8px);}
+    60%{transform:translateY(4px);}
+}
+
+/* ================= PROJECT SECTION ================= */
+/* ================= BASE ================= */
+
+.sparcx-projects-section{
+    width:100%;
+    padding:60px 40px;
+    background:#ffffff;
+}
+
+.sparcx-projects-heading{
+    width:100%;
+    margin:0 auto 38px;
+    text-align:center;
+
+    font-family:Georgia, serif;
+    font-size:18px;
+    font-weight:300;
+    color:#6f675f;
+    letter-spacing:.3px;
+    text-transform:uppercase;
+}
+
+/* ================= GRID ================= */
+
+.sparcx-projects-grid{
+    width:100%;
+    max-width:1280px;
+    margin:auto;
+    display:grid;
+
+    /* 🔥 responsive magic */
+    grid-template-columns:repeat(auto-fit, minmax(260px, 1fr));
+
+    gap:24px;
+    margin-bottom:50px;
+}
+
+/* ================= CARD ================= */
+
+.sparcx-project-card{
+    width:100%;
+}
+
+.sparcx-project-image-box{
+    position:relative;
+    width:100%;
+    height:520px;
+    overflow:hidden;
+    background:#ddd;
+}
+
+.sparcx-project-image{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    display:block;
+    transition:transform .45s ease;
+}
+
+.sparcx-project-card:hover .sparcx-project-image{
+    transform:scale(1.04);
+}
+
+/* ================= OVERLAY ================= */
+
+.sparcx-project-overlay{
+    position:absolute;
+    inset:0;
+    background:rgba(0,0,0,.23);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.sparcx-project-overlay::before{
+    content:"";
+    position:absolute;
+    inset:18px;
+    border:1px solid rgba(255,255,255,.38);
+}
+
+.sparcx-project-overlay-text{
+    position:relative;
+    z-index:2;
+    color:#fff;
+    font-family:Georgia, serif;
+    font-size:18px;
+    font-weight:300;
+    letter-spacing:.3px;
+}
+
+/* ================= TEXT ================= */
+
+.sparcx-project-info{
+    padding-top:26px;
+    text-align:center;
+}
+
+.sparcx-project-title{
+    margin-bottom:8px;
+    font-family:Georgia, serif;
+    font-size:22px;
+    font-weight:300;
+    color:#736a63;
+    letter-spacing:.2px;
+    text-transform:uppercase;
+}
+
+.sparcx-project-location{
+    font-family:Georgia, serif;
+    font-size:11px;
+    font-weight:300;
+    color:#857d76;
+    letter-spacing:.7px;
+    text-transform:uppercase;
+}
+
+/* ================= RESPONSIVE ================= */
+
+/* Tablets */
+@media (max-width:992px){
+
+    .sparcx-projects-section{
+        padding:50px 30px;
+    }
+
+    .sparcx-project-image-box{
+        height:420px;
+    }
+}
+
+/* Phones */
+@media (max-width:768px){
+
+    .sparcx-projects-section{
+        padding:45px 20px;
+    }
+
+    .sparcx-project-image-box{
+        height:300px;
+    }
+
+    .sparcx-project-title{
+        font-size:18px;
+    }
+
+    .sparcx-projects-heading{
+        font-size:16px;
+    }
+}
+
+/* Small phones */
+@media (max-width:480px){
+
+    .sparcx-project-image-box{
+        height:240px;
+    }
+}
+</style>
 </head>
 <body>
    <!-- Header -->
@@ -24,7 +285,7 @@
         <nav class="nav-links-left">
             <a href="aboutus.html" class="nav-link">About</a>
             <a href="portifolio.html" class="nav-link">Portfolio</a>
-            <a href="contact.html" class="nav-link">Contact us</a>
+            <a href="index.html" class="nav-link">PROJECT ENQUIRY</a>
         </nav>
         <a href="index.html" class="logo">
             <img src="loggg.png" alt="SpaceCraft Logo">
@@ -44,192 +305,275 @@
             <a href="services.html" class="nav-link">Services</a>
             <a href="portifolio.html" class="nav-link">Portfolio</a>
            <a href="furniture.html" class="nav-link">Furniture Collection </a>
-            <a href="contact.html" class="nav-link">Contact us</a>
+            <a href="index.html" class="nav-link">PROJECT ENQUIRY</a>
              <a href="samantha.html" class="nav-link">Samantha</a>
         </nav>
     </div>
 </header>
 
-  <section class="portfolio">
-    <div class="portfolio-header">
-      <h2><span>Our</span> Portfolio</h2>
-      <p>
-        Explore Our Collection Of Thoughtfully Designed Spaces That Blend<br />
-        Functionality, Aesthetics, And Cultural Authenticity
-      </p>
+<section class="sparc-hero-wrap">
+        <div class="sparc-hero-overlay"></div>
+
+        <div class="sparc-hero-content">
+            <span class="sparc-hero-subtitle">RECENT PROJECTS</span>
+            <h1 class="sparc-hero-title">SPARC SYSTEMS LTD.</h1>
+
+            <a href="#" class="sparc-hero-btn">
+                <span></span>
+                TAKE A LOOK
+                <span></span>
+            </a>
+
+            <div class="sparc-scroll-down">&#709;</div>
+        </div>
+    </section>
+
+
+<section class="sparcx-projects-section">
+
+    <h2 class="sparcx-projects-heading">RECENT PROJECTS</h2>
+
+    <div class="sparcx-projects-grid"> 
+
+        <!-- CARD 1 -->
+        <div class="sparcx-project-card">
+            <div class="sparcx-project-image-box">
+                <img src="images/project.png" class="sparcx-project-image" alt="">
+                <div class="sparcx-project-overlay">
+                    <span class="sparcx-project-overlay-text">VIEW PROJECT</span>
+                </div>
+            </div>
+
+            <div class="sparcx-project-info">
+                <h3 class="sparcx-project-title">MILANZI INTERIORS.</h3>
+                <p class="sparcx-project-location">LILONGWE, MALAWI</p>
+            </div>
+        </div>
+
+        <!-- CARD 2 -->
+        <div class="sparcx-project-card">
+            <div class="sparcx-project-image-box">
+                <img src="images/projectkk.png" class="sparcx-project-image" alt="">
+            </div>
+
+            <div class="sparcx-project-info">
+                <h3 class="sparcx-project-title">SPARC SYSTEMS LTD.</h3>
+                <p class="sparcx-project-location">LILONGWE, MALAWI</p>
+            </div>
+        </div>
+
+        <!-- CARD 3 -->
+        <div class="sparcx-project-card">
+            <div class="sparcx-project-image-box">
+                <img src="images/projrrrct.png" class="sparcx-project-image" alt="">
+            </div>
+
+            <div class="sparcx-project-info">
+                <h3 class="sparcx-project-title">7 arts.</h3>
+                <p class="sparcx-project-location">LILONGWE, MALAWI</p>
+            </div>
+        </div>
+
     </div>
 
-    <div class="portfolio-filters">
-      <button class="filter-btn active" data-filter="all">All Projects</button>
-      <button class="filter-btn" data-filter="Commercial">Commercial</button>
-      <button class="filter-btn" data-filter="office">Office Design</button>
-      <button class="filter-btn" data-filter="hospitality">Hospitality & 3D Concepts</button>
+    <div class="sparcx-projects-grid">
+
+        <!-- CARD 1 -->
+        <div class="sparcx-project-card">
+            <div class="sparcx-project-image-box">
+                <img src="images/art1.png" class="sparcx-project-image" alt="">
+                <div class="sparcx-project-overlay">
+                    <span class="sparcx-project-overlay-text">VIEW PROJECT</span>
+                </div>
+            </div>
+
+            <div class="sparcx-project-info">
+                <h3 class="sparcx-project-title">7 arts.</h3>
+                <p class="sparcx-project-location">LILONGWE, MALAWI</p>
+            </div>
+        </div>
+
+        <!-- CARD 2 -->
+        <div class="sparcx-project-card">
+            <div class="sparcx-project-image-box">
+                <img src="images/art2.png" class="sparcx-project-image" alt="">
+            </div>
+
+            <div class="sparcx-project-info">
+                <h3 class="sparcx-project-title">7 arts.</h3>
+                <p class="sparcx-project-location">LILONGWE, MALAWI</p>
+            </div>
+        </div>
+
+        <!-- CARD 3 -->
+        <div class="sparcx-project-card">
+            <div class="sparcx-project-image-box">
+                <img src="images/art3.png" class="sparcx-project-image" alt="">
+            </div>
+
+            <div class="sparcx-project-info">
+                <h3 class="sparcx-project-title">SPARC SYSTEMS LTD.</h3>
+                <p class="sparcx-project-location">LILONGWE, MALAWI</p>
+            </div>
+        </div>
+
+    </div>
+    <div class="sparcx-projects-grid">
+
+        <!-- CARD 1 -->
+        <div class="sparcx-project-card">
+            <div class="sparcx-project-image-box">
+                <img src="images/kita1.png" class="sparcx-project-image" alt="">
+                <div class="sparcx-project-overlay">
+                    <span class="sparcx-project-overlay-text">VIEW PROJECT</span>
+                </div>
+            </div>
+
+            <div class="sparcx-project-info">
+                <h3 class="sparcx-project-title">KITA AND CO.</h3>
+                <p class="sparcx-project-location">LILONGWE, MALAWI</p>
+            </div>
+        </div>
+
+        <!-- CARD 2 -->
+        <div class="sparcx-project-card">
+            <div class="sparcx-project-image-box">
+                <img src="images/kita2.png" class="sparcx-project-image" alt="">
+            </div>
+
+            <div class="sparcx-project-info">
+                <h3 class="sparcx-project-title">KITA AND CO.</h3>
+                <p class="sparcx-project-location">LILONGWE, MALAWI</p>
+            </div>
+        </div>
+
+        <!-- CARD 3 -->
+        <div class="sparcx-project-card">
+            <div class="sparcx-project-image-box">
+                <img src="images/kita3.png" class="sparcx-project-image" alt="">
+            </div>
+
+            <div class="sparcx-project-info">
+                <h3 class="sparcx-project-title">KITA AND CO.</h3>
+                <p class="sparcx-project-location">LILONGWE, MALAWI</p>
+            </div>
+        </div>
+
+    </div>
+    <div class="sparcx-projects-grid">
+
+        <!-- CARD 1 -->
+        <div class="sparcx-project-card">
+            <div class="sparcx-project-image-box">
+                <img src="images/mila1.png" class="sparcx-project-image" alt="">
+                <div class="sparcx-project-overlay">
+                    <span class="sparcx-project-overlay-text">VIEW PROJECT</span>
+                </div>
+            </div>
+
+            <div class="sparcx-project-info">
+                <h3 class="sparcx-project-title">MILANZI INTERIORS.</h3>
+                <p class="sparcx-project-location">LILONGWE, MALAWI</p>
+            </div>
+        </div>
+
+        <!-- CARD 2 -->
+        <div class="sparcx-project-card">
+            <div class="sparcx-project-image-box">
+                <img src="images/mila2.png" class="sparcx-project-image" alt="">
+            </div>
+
+            <div class="sparcx-project-info">
+                <h3 class="sparcx-project-title">MILANZI INTERIORS.</h3>
+                <p class="sparcx-project-location">LILONGWE, MALAWI</p>
+            </div>
+        </div>
+
+        <!-- CARD 3 -->
+        <div class="sparcx-project-card">
+            <div class="sparcx-project-image-box">
+                <img src="images/mila3.png" class="sparcx-project-image" alt="">
+            </div>
+
+            <div class="sparcx-project-info">
+                <h3 class="sparcx-project-title">MILANZI INTERIORS.</h3>
+                <p class="sparcx-project-location">LILONGWE, MALAWI</p>
+            </div>
+        </div>
+
     </div>
 
-    <div class="portfolio-grid">
-      <!-- Card 1 -->
-      <div class="project-card commercial">
-        <img src="images\NBS Bank-Unnamed-20230802-163618.jpg" alt="Luxury Hotel Lobby" />
-        <div class="overlay">
-          <span class="category">Commercial</span>
-          <h3>NBS Bank</h3>
-          <p><i class="fa-solid fa-location-dot"></i> Lilongwe, Malawi</p>
-          <button>View Project →</button>
-        </div>
-      </div>
-
-      <!-- Card 2 -->
-      <div class="project-card Commercial">
-        <img src="images\LAW FIRM LAYOUT-Managing Partners Office-20250407-130447.jpg" alt="Serene Residence" />
-        <div class="overlay">
-          <span class="category">Commercial</span>
-          <h3>LAW FIRM LAYOUT</h3>
-          <p><i class="fa-solid fa-location-dot"></i> Blantyre, Malawi</p>
-          <button>View Project →</button>
-        </div>
-      </div>
-
-      <!-- Card 3 -->
-      <div class="project-card Commercial">
-        <img src="images\NBS Bank-Unnamed-20230802-163618.jpg" alt="Modern Kitchen" />
-        <div class="overlay">
-          <span class="category">Commercial</span>
-          <h3>NBS Bank</h3>
-          <p><i class="fa-solid fa-location-dot"></i> Lilongwe, Malawi</p>
-          <button>View Project →</button>
-        </div>
-      </div>
-
-      <!-- Card 4 -->
-      <div class="project-card commercial">
-        <img src="images\NBS Bank-Unnamed-20230802-163618.jpg"  alt="Custom Furniture" />
-        <div class="overlay">
-          <span class="category">Commercial</span>
-          <h3>NBS Bank</h3>
-          <p><i class="fa-solid fa-location-dot"></i> Lilongwe, Malawi</p>
-          <button>View Project →</button>
-        </div>
-      </div>
-
-      <!-- Card 5 -->
-      <div class="project-card Commercial">
-        <img src="images\MILANZI GROUP LL Office-Open Office-20240919-160111.jpg" alt="Boutique Hotel Suites" />
-        <div class="overlay">
-          <span class="category">Commercial</span>
-          <h3>MILANZI GROUP LL Office</h3>
-          <p><i class="fa-solid fa-location-dot"></i> Blantyre, Malawi</p>
-          <button>View Project →</button>
-        </div>
-      </div>
-
-      <!-- Card 6 -->
-      <div class="project-card office">
-        <img src="images\DWG File GROUND FLOOR SPARC-Hallway-20241105-130754.jpg"  alt="Executive Office" />
-        <div class="overlay">
-          <span class="category">Office Design</span>
-          <h3>GROUND FLOOR SPARC</h3>
-          <p><i class="fa-solid fa-location-dot"></i> Lilongwe, Malawi</p>
-          <button>View Project →</button>
-        </div>
-      </div>
-    </div>
-
-    <div class="load-more">
-      <button>Load More Projects</button>
-    </div>
-  </section>
-  <section class="cta-section">
-  <h2>
-    Let’s <span class="highlight">Create</span> Your <span class="highlight italic">Dream</span> Space
-  </h2>
-  <p>
-    Each Project In Our Portfolio Represents A Unique Story. Ready To Tell Yours?
-  </p>
-  <button>Start Your Project</button>
-  
 </section>
- <br> <br>
-<footer class="milanzi-footer">
-  <div class="footer-container">
 
-    <!-- Brand -->
-    <div class="footer-brand">
-      <h2 class="brand-title">Milanzi Interiors</h2>
-      <p class="brand-tagline">
-        Eclectic. Sustainable. Soulful.<br>
-        Malawi's Award-Winning Luxury<br>
-        Interior Design Studio.
-      </p>
-    </div>
+ <br> <br> <br>
+<footer class="ft-footer">
 
-    <!-- Quick Links -->
-    <div class="footer-links">
-      <h3 class="footer-heading">Quick Links</h3>
-      <ul>
-        <li><a href="#">About Us</a></li>
-        <li><a href="#">Our Services</a></li>
-        <li><a href="#">Portfolio</a></li>
-        <li><a href="#">Furniture Collection</a></li>
-      </ul>
-    </div>
+  <div class="ft-top">
 
-    <!-- Contact -->
-    <div class="footer-contact">
-      <h3 class="footer-heading">Contact</h3>
-      <ul>
-        <li>
-          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5S10.62 6.5 12 6.5s2.5 1.12 2.5 2.5S13.38 11.5 12 11.5z"/>
-          </svg>
-          Lilongwe, Malawi
-        </li>
-        <li>
-          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57 1.1 0 2 .9 2 2V20c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h3c1.1 0 2 .9 2 2 0 1.24-.2 2.45-.57 3.57-.12.35-.03.75.24 1.02l-2.2 2.2z"/>
-          </svg>
-          +265 (0) 888 877 264
-        </li>
-        <li>
-          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
-          </svg>
-          hello@milanzigroupmw.com
-        </li>
-      </ul>
-    </div>
+    <div class="ft-newsletter">
+      <h3>NEWSLETTER</h3>
 
-    <!-- Social -->
-    <div class="footer-social">
-      <h3 class="footer-heading">Follow Us</h3>
-      <div class="social-icons">
-        <a href="#" class="facebook"><i class="fab fa-facebook-f"></i></a>
-        <a href="#" class="twitter"><i class="fab fa-twitter"></i></a>
-        <a href="#" class="linkedin"><i class="fab fa-linkedin-in"></i></a>
-        <a href="#" class="tiktok"><i class="fab fa-tiktok"></i></a>
+      <div class="ft-form-row">
+        <div class="ft-field">
+          <label>NAME:</label>
+          <input type="text">
+        </div>
+
+        <div class="ft-field">
+          <label>EMAIL:</label>
+          <input type="email">
+        </div>
       </div>
+
+      <button class="ft-btn">— SUBSCRIBE —</button>
+    </div>
+
+    <div class="ft-contact">
+      <h3>CONTACT</h3>
+      <p>HELLO@MILANZIGROUPMW.COM</p>
+      <p>+265 (0) 888 877 264</p>
     </div>
 
   </div>
 
-  <div class="footer-bottom">
-    <p>© 2025 Milanzi Interiors. All Rights Reserved.</p>
-   
+  <div class="ft-bottom">
+
+    <div class="ft-left">
+
+      <div class="ft-logo">
+        <img src="loggg.png" alt="Logo">
+      </div>
+
+      <div class="ft-links">
+        <div>
+          <span>ABOUT</span>
+          <span>ENQUIRE</span>
+          <span>PRIVACY POLICY</span>
+        </div>
+        <div>
+          <span>PORTFOLIO</span>
+          <span>PRESS</span>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="ft-social">
+      <i class="fab fa-instagram"></i>
+      <i class="fab fa-youtube"></i>
+      <i class="fab fa-tiktok"></i>
+    </div>
+
   </div>
+
 </footer>
 
+<div class="ft-copy">
+  COPYRIGHT © MILANZ INTERIORS 2026 ALL RIGHTS RESERVED.
+</div>
 
-  <script src="script.js"></script>
+  <script src="main.js"></script>
+<script src="animationcore.js"></script>
 
-  <script src="animationcore.js"></script>
-  
-    <script src="main.js"></script>
-
-
-  <script>
-  document.querySelector('.load-more button').addEventListener('click', function() {
-    window.location.href = 'portfolio1.html'; // replace with your URL
-  });
-  
-</script>
-</body>
+ </body>
 </html>

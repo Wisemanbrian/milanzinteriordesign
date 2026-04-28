@@ -8,19 +8,149 @@
   <link rel="stylesheet" href="services.css">
   <link rel="stylesheet" href="headerfooter.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+   <link rel="stylesheet" href="foota.css">
+   <link rel="stylesheet" href="styles.css">
+ <style>
 
-  
+    /* ================= HERO SECTION ================= */
 
+.sparc-hero-wrap{
+    position:relative;
+    width:100%;
+
+    /* 🔥 flexible height */
+    height: 70vh;
+    min-height: clamp(420px, 65vh, 520px);
+    max-height: 760px;
+
+    background:url("images/portimage.png") center center/cover no-repeat;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    overflow:hidden;
+}
+
+.sparc-hero-overlay{
+    position:absolute;
+    inset:0;
+    background:rgba(0,0,0,.18);
+}
+
+.sparc-hero-content{
+    position:relative;
+    z-index:2;
+
+    /* 🔥 cleaner width control */
+    width: min(90%, 1200px);
+
+    margin-top: clamp(40px, 8vh, 80px);
+    text-align:center;
+    color:#fff;
+}
+
+/* TEXT */
+
+.sparc-hero-subtitle{
+    display:block;
+    margin-bottom: clamp(8px, 2vw, 10px);
+
+    font-family:Georgia, serif;
+    font-size: clamp(14px, 2vw, 20px);
+
+    font-weight:400;
+    letter-spacing:.5px;
+}
+
+.sparc-hero-title{
+    margin-bottom: clamp(18px, 4vw, 28px);
+
+    font-family:"Times New Roman", serif;
+
+    /* 🔥 fluid typography */
+    font-size: clamp(32px, 8vw, 76px);
+
+    font-weight:300;
+    line-height:1.1;
+    letter-spacing:1px;
+    text-transform:uppercase;
+}
+
+/* BUTTON */
+
+.sparc-hero-btn{
+    display:inline-flex;
+    align-items:center;
+
+    gap: clamp(8px, 2vw, 14px);
+
+    padding: clamp(10px, 2vw, 14px) clamp(20px, 5vw, 38px);
+
+    background:#7b6f62;
+    color:#fff;
+    text-decoration:none;
+
+    font-size: clamp(14px, 2vw, 18px);
+    letter-spacing:.5px;
+
+    transition:.3s ease;
+}
+
+.sparc-hero-btn span{
+    width: clamp(12px, 2vw, 18px);
+    height:1px;
+    background:#fff;
+}
+
+.sparc-hero-btn:hover{
+    background:#5d5145;
+}
+
+/* SCROLL ICON */
+
+.sparc-scroll-down{
+    margin-top: clamp(30px, 6vh, 55px);
+
+    font-size: clamp(28px, 6vw, 48px);
+    font-weight:100;
+
+    animation:sparcBounce 1.5s infinite;
+}
+
+@keyframes sparcBounce{
+    0%,20%,50%,80%,100%{transform:translateY(0);}
+    40%{transform:translateY(8px);}
+    60%{transform:translateY(4px);}
+}
+
+/* ===== MOBILE FIX ===== */
+@media (max-width: 480px){
+    .sparc-hero-wrap{
+        height: auto;
+        padding: 60px 0;
+    }
+
+    .sparc-hero-title{
+        line-height: 1.2;
+    }
+}
+
+/* ===== LARGE SCREEN POLISH ===== */
+@media (min-width: 1400px){
+    .sparc-hero-wrap{
+        max-height: 900px;
+    }
+}
+ </style>
 </head>
 <body>
-  
-    <!-- Header -->
+
+  <!-- Header -->
     <header class="header">
     <div class="container">
         <nav class="nav-links-left">
             <a href="aboutus.html" class="nav-link">About</a>
             <a href="portifolio.html" class="nav-link">Portfolio</a>
-            <a href="contact.html" class="nav-link">Contact us</a>
+            <a href="index.html" class="nav-link">PROJECT ENQUIRY</a>
         </nav>
         <a href="index.html" class="logo">
             <img src="loggg.png" alt="SpaceCraft Logo">
@@ -35,209 +165,221 @@
             <span></span>
             <span></span>
         </div>
-        <nav class="nav-links-mobile">
+       <nav class="nav-links-mobile">
             <a href="aboutus.html" class="nav-link">About</a>
             <a href="services.html" class="nav-link">Services</a>
             <a href="portifolio.html" class="nav-link">Portfolio</a>
            <a href="furniture.html" class="nav-link">Furniture Collection </a>
-            <a href="contact.html" class="nav-link">Contact us</a>
+            <a href="index.html" class="nav-link">PROJECT ENQUIRY</a>
              <a href="samantha.html" class="nav-link">Samantha</a>
         </nav>
     </div>
-</header> <br> <br> <br>
+</header>  <br>
+  
+    <section class="sparc-hero-wrap">
+        <div class="sparc-hero-overlay"></div>
 
+        <div class="sparc-hero-content">
+          
+            <h1 class="sparc-hero-title">OUR SERVICES.</h1>
 
-<section class="services-section">
-  <div class="container">
-    <h2><span>Our</span> Services</h2>
-    <p>Comprehensive Interior Design Solutions Tailored To Your Unique Needs—<br>
-    From Concept To Completion</p>
+            <a href="#" class="sparc-hero-btn">
+                <span></span>
+                CONTACT US
+                <span></span>
+            </a>
 
-    <div class="services-grid">
-      <div class="service-card">
-        <img src=images\slides1.jpg alt="Interior Design">
-        <div class="service-body">
-          <h3><span>Interior</span> Design</h3>
-          <p class="subtitle">From vision to reality</p>
-          <p>Full turn-key service from concept to completion. We provide comprehensive 3D visualisations, detailed drawings, and seamless implementation to bring your dream space to life.</p>
-          <button>Enquire today</button>
+            <div class="sparc-scroll-down">&#709;</div>
         </div>
-      </div>
+    </section>
 
-      <div class="service-card">
-        <img src=images\slides2.jpg alt="Interior Styling">
-        <div class="service-body">
-          <h3><span>Interior</span> Styling & Décor</h3>
-          <p class="subtitle">Refresh and elevate</p>
-          <p>Transform your existing space with our expert styling services. We curate furnishings, artwork, and décor elements that breathe new life into your interiors.</p>
-          <button>Enquire today</button>
-        </div>
-      </div>
 
-      <div class="service-card">
-        <img src=images\slide7.jpg alt="Project Management">
-        <div class="service-body">
-          <h3><span>Project</span> Management</h3>
-          <p class="subtitle">Seamless execution</p>
-          <p>End-to-end coordination from concept to delivery. We handle all aspects of your project, ensuring timely completion and exceptional quality at every stage.</p>
-          <button>Enquire today</button>
-        </div>
-      </div>
+
+    <section class="sv-sec">
+<div class="sv-wrap">
+
+<!-- 🔥 TOP HEADER (ADDED) -->
+<div class="sv-top">
+
+    <div class="sv-left">
+        <h2>
+            CREATING BEAUTIFUL, COMFORTABLE <em>and</em><br>
+            TIMELESS INTERIORS <em>is</em> OUR PASSION.
+        </h2>
     </div>
-     <div class="services-grid">
-      <div class="service-card">
-        <img src=images\slide8.jpg alt="Interior Design">
-        <div class="service-body">
-          <h3><span>Custom  </span> Furniture</h3>
-          <p class="subtitle">Bespoke craftsmanship</p>
-          <p>Locally crafted, custom-designed furniture pieces for home and office. Each piece is uniquely created to match your space and style perfectly.</p>
-          <button>Enquire today</button>
-        </div>
-      </div>
 
-      <div class="service-card">
-        <img src=images\slide9.jpg alt="Interior Styling">
-        <div class="service-body">
-          <h3><span>DIY </span> Design Packages</h3>
-          <p class="subtitle">Design at your pace</p>
-          <p>Ready-to-implement design concepts perfect for remote clients or DIY enthusiasts. Get professional design guidance you can execute on your own timeline.</p>
-          <button>Enquire today</button>
-        </div>
-      </div>
-
-      <div class="service-card">
-        <img src=images\slide7.jpg alt="Project Management">
-        <div class="service-body">
-          <h3><span>Cabinetry </span> Design</h3>
-          <p class="subtitle">Functional elegance</p>
-          <p>Custom cabinetry solutions for kitchens, wardrobes, vanities, and storage. Beautiful designs that maximize functionality and complement your space.</p>
-          <button>Enquire today</button>
-        </div>
-      </div>
+    <div class="sv-right">
+        Our team of talented Interior and Architectural Designers specialises in creating spaces that are uniquely tailored to each client's specific requirements, considering location, context, brief, and personal taste. We have the expertise to work on a diverse range of projects, from furnishing show homes for developers to carefully restoring Grade II listed buildings and overseeing large-scale residential projects that require comprehensive interior and architectural design services.
     </div>
-  </div>
+
+</div>
+
+<!-- ROW 1 -->
+<div class="sv-row">
+    <div class="sv-card">
+        <small>OUR SERVICES</small>
+        <h3>INTERIOR DESIGN</h3>
+        <p>
+            Our interior design service is a full turnkey solution, from concept to completion. We translate your vision into a detailed design package that includes 3D visuals, 2D drawings, BOQ, and curated materials to bring everything to life with precision and elegance.
+        </p>
+    </div>
+    <div class="sv-img">
+        <img src="images/service6.png">
+    </div>
+</div>
+
+<!-- ROW 2 -->
+<div class="sv-row reverse">
+    <div class="sv-card">
+        <small>OUR SERVICES</small>
+        <h3>ARCHITECTURAL DESIGN</h3>
+        <p>
+            We provide comprehensive architectural solutions tailored to each project. From planning and concept development to execution, we ensure functional, aesthetic, and sustainable outcomes.
+        </p>
+    </div>
+    <div class="sv-img">
+        <img src="images/service7.png">
+    </div>
+</div>
+
+<!-- ROW 3 -->
+<div class="sv-row">
+    <div class="sv-card">
+        <small>OUR SERVICES</small>
+        <h3>SPACE PLANNING</h3>
+        <p>
+            Our space planning ensures optimal use of every square meter. We design layouts that enhance flow, usability, and comfort while maintaining a refined and elegant atmosphere.
+        </p>
+    </div>
+    <div class="sv-img">
+        <img src="images/service11.png">
+    </div>
+</div>
+
+<!-- ROW 4 -->
+<div class="sv-row reverse">
+    <div class="sv-card">
+        <small>OUR SERVICES</small>
+        <h3>PROJECT MANAGEMENT</h3>
+        <p>
+            From concept to completion, we manage every aspect of your project. Our team ensures timelines, quality, and execution are handled professionally for a seamless experience.
+        </p>
+    </div>
+    <div class="sv-img">
+        <img src="images/service2.png">
+    </div>
+</div>
+
+<!-- ROW 3 -->
+<div class="sv-row">
+    <div class="sv-card">
+        <small>OUR SERVICES</small>
+        <h3>SPACE PLANNING</h3>
+        <p>
+            Our space planning ensures optimal use of every square meter. We design layouts that enhance flow, usability, and comfort while maintaining a refined and elegant atmosphere.
+        </p>
+    </div>
+    <div class="sv-img">
+        <img src="images/service3.png">
+    </div>
+</div>
+
+<!-- ROW 4 -->
+<div class="sv-row reverse">
+    <div class="sv-card">
+        <small>OUR SERVICES</small>
+        <h3>PROJECT MANAGEMENT</h3>
+        <p>
+            From concept to completion, we manage every aspect of your project. Our team ensures timelines, quality, and execution are handled professionally for a seamless experience.
+        </p>
+    </div>
+    <div class="sv-img">
+        <img src="images/service4.png">
+    </div>
+</div>
+
+<div class="sv-row">
+    <div class="sv-card">
+        <small>OUR SERVICES</small>
+        <h3>SPACE PLANNING</h3>
+        <p>
+            Our space planning ensures optimal use of every square meter. We design layouts that enhance flow, usability, and comfort while maintaining a refined and elegant atmosphere.
+        </p>
+    </div>
+    <div class="sv-img">
+        <img src="images/service3.png">
+    </div>
+</div>
+
+</div>
 </section>
-<section class="promise-section">
-  <div class="container">
-    <button class="load-more-btn">Load More Services</button>
 
-    <h2><span>Our</span> Promise</h2>
-    <p>The Principles That Guide Every Project We Undertake</p>
 
-    <div class="promise-grid">
-      <div class="promise-card highlight">
-        <h3>Integrity</h3>
-        <p>We do what we say we'll do.</p>
+<footer class="ft-footer">
+
+  <div class="ft-top">
+
+    <div class="ft-newsletter">
+      <h3>NEWSLETTER</h3>
+
+      <div class="ft-form-row">
+        <div class="ft-field">
+          <label>NAME:</label>
+          <input type="text">
+        </div>
+
+        <div class="ft-field">
+          <label>EMAIL:</label>
+          <input type="email">
+        </div>
       </div>
 
-      <div class="promise-card">
-        <h3>Creativity</h3>
-        <p>Tailor-made design crafted for you.</p>
-      </div>
-
-      <div class="promise-card">
-        <h3>Collaboration</h3>
-        <p>Shared vision. Collective excellence.</p>
-      </div>
-
-      <div class="promise-card">
-        <h3>Service with Purpose</h3>
-        <p>Design that uplifts and empowers.</p>
-      </div>
-
-      <div class="promise-card">
-        <h3>Quality & Excellence</h3>
-        <p>Crisp execution, every detail refined.</p>
-      </div>
-
-      <div class="promise-card">
-        <h3>Transparency</h3>
-        <p>Honesty and clarity at every step.</p>
-      </div>
-    </div>
-  </div>
-</section> <br>
-
-<section class="philosophy-section">
-  <h2><span>Our</span> Philosophy</h2>
-  <p class="quote">"Design is more than aesthetics — it's purpose, emotion, and experience."</p>
-  <p class="philosophy-text">
-    We fuse functionality, originality, and meaning to create spaces that tell stories.
-    Every project is an opportunity to craft an environment that not only looks beautiful
-    but enhances the way you live, work, and feel. Our approach honors both commercial
-    and residential needs, always with an eye for detail and a commitment to excellence.
-  </p>
-</section>
-
-
-<footer class="milanzi-footer">
-  <div class="footer-container">
-
-    <!-- Brand -->
-    <div class="footer-brand">
-      <h2 class="brand-title">Milanzi Interiors</h2>
-      <p class="brand-tagline">
-        Eclectic. Sustainable. Soulful.<br>
-        Malawi's Award-Winning Luxury<br>
-        Interior Design Studio.
-      </p>
+      <button class="ft-btn">— SUBSCRIBE —</button>
     </div>
 
-    <!-- Quick Links -->
-    <div class="footer-links">
-      <h3 class="footer-heading">Quick Links</h3>
-      <ul>
-        <li><a href="#">About Us</a></li>
-        <li><a href="#">Our Services</a></li>
-        <li><a href="#">Portfolio</a></li>
-        <li><a href="#">Furniture Collection</a></li>
-      </ul>
-    </div>
-
-    <!-- Contact -->
-    <div class="footer-contact">
-      <h3 class="footer-heading">Contact</h3>
-      <ul>
-        <li>
-          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5S10.62 6.5 12 6.5s2.5 1.12 2.5 2.5S13.38 11.5 12 11.5z"/>
-          </svg>
-          Lilongwe, Malawi
-        </li>
-        <li>
-          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57 1.1 0 2 .9 2 2V20c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h3c1.1 0 2 .9 2 2 0 1.24-.2 2.45-.57 3.57-.12.35-.03.75.24 1.02l-2.2 2.2z"/>
-          </svg>
-          +265 (0) 888 877 264
-        </li>
-        <li>
-          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
-          </svg>
-          hello@milanzigroupmw.com
-        </li>
-      </ul>
-    </div>
-
-    <!-- Social -->
-    <div class="footer-social">
-      <h3 class="footer-heading">Follow Us</h3>
-      <div class="social-icons">
-        <a href="#" class="facebook"><i class="fab fa-facebook-f"></i></a>
-        <a href="#" class="twitter"><i class="fab fa-twitter"></i></a>
-        <a href="#" class="linkedin"><i class="fab fa-linkedin-in"></i></a>
-        <a href="#" class="tiktok"><i class="fab fa-tiktok"></i></a>
-      </div>
+    <div class="ft-contact">
+      <h3>CONTACT</h3>
+      <p>HELLO@MILANZIGROUPMW.COM</p>
+      <p>+265 (0) 888 877 264</p>
     </div>
 
   </div>
 
-  <div class="footer-bottom">
-    <p>© 2025 Milanzi Interiors. All Rights Reserved.</p>
-   
+  <div class="ft-bottom">
+
+    <div class="ft-left">
+
+      <div class="ft-logo">
+        <img src="loggg.png" alt="Logo">
+      </div>
+
+      <div class="ft-links">
+        <div>
+          <span>ABOUT</span>
+          <span>ENQUIRE</span>
+          <span>PRIVACY POLICY</span>
+        </div>
+        <div>
+          <span>PORTFOLIO</span>
+          <span>PRESS</span>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="ft-social">
+      <i class="fab fa-instagram"></i>
+      <i class="fab fa-youtube"></i>
+      <i class="fab fa-tiktok"></i>
+    </div>
+
   </div>
+
 </footer>
 
+<div class="ft-copy">
+  COPYRIGHT © MILANZ INTERIORS 2026 ALL RIGHTS RESERVED.
+</div>
 <script src="animationcore.js"></script>
     <script src="main.js"></script>
 

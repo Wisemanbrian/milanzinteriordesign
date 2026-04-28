@@ -8,9 +8,145 @@
   <link rel="stylesheet" href="furniture.css" />
   <link rel="stylesheet" href="headerfooter.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="foota.css">
+  <link rel="stylesheet" href="styles.css">
 
 </head>
 <body>
+
+  <style>
+
+body{
+      overflow-x: hidden;
+}
+html{
+    scroll-behavior: smooth;
+      overflow-x: hidden;
+}
+
+/* ================= HERO SECTION ================= */
+
+.sparc-hero-wrap{
+    position:relative;
+    width:100%;
+
+    /* 🔥 smarter height handling */
+    min-height: clamp(420px, 70vh, 760px);
+    height: 70vh;
+
+    background:url("images/furniture.png") center center/cover no-repeat;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    overflow:hidden;
+}
+
+.sparc-hero-overlay{
+    position:absolute;
+    inset:0;
+    background:rgba(0,0,0,.18);
+}
+
+.sparc-hero-content{
+    position:relative;
+    z-index:2;
+    width: min(90%, 1200px);
+    margin-top: clamp(40px, 8vh, 80px);
+    text-align:center;
+    color:#fff;
+}
+
+/* TEXT */
+
+.sparc-hero-subtitle{
+    display:block;
+    margin-bottom: clamp(8px, 2vw, 12px);
+    font-family:Georgia, serif;
+    font-size: clamp(14px, 2vw, 20px);
+    font-weight:400;
+    letter-spacing:.5px;
+}
+
+.sparc-hero-title{
+    margin-bottom: clamp(18px, 4vw, 28px);
+    font-family:"Times New Roman", serif;
+
+    /* 🔥 fluid typography */
+    font-size: clamp(32px, 8vw, 76px);
+
+    font-weight:300;
+    line-height:1.1;
+    letter-spacing:1px;
+    text-transform:uppercase;
+}
+
+/* BUTTON */
+
+.sparc-hero-btn{
+    display:inline-flex;
+    align-items:center;
+    gap: clamp(8px, 2vw, 14px);
+
+    padding: clamp(10px, 2vw, 14px) clamp(20px, 5vw, 38px);
+
+    background:#7b6f62;
+    color:#fff;
+    text-decoration:none;
+
+    font-size: clamp(14px, 2vw, 18px);
+    letter-spacing:.5px;
+    transition:.3s ease;
+}
+
+.sparc-hero-btn span{
+    width: clamp(12px, 2vw, 18px);
+    height:1px;
+    background:#fff;
+}
+
+.sparc-hero-btn:hover{
+    background:#5d5145;
+}
+
+/* SCROLL ICON */
+
+.sparc-scroll-down{
+    margin-top: clamp(30px, 6vh, 55px);
+
+    font-size: clamp(28px, 6vw, 48px);
+    font-weight:100;
+
+    animation:sparcBounce 1.5s infinite;
+}
+
+@keyframes sparcBounce{
+    0%,20%,50%,80%,100%{transform:translateY(0);}
+    40%{transform:translateY(8px);}
+    60%{transform:translateY(4px);}
+}
+
+/* ===== EXTRA POLISH ===== */
+
+/* Small phones */
+@media (max-width: 480px){
+    .sparc-hero-wrap{
+        height: auto;
+        padding: 60px 0;
+    }
+
+    .sparc-hero-title{
+        line-height: 1.2;
+    }
+}
+
+/* Very large screens */
+@media (min-width: 1400px){
+    .sparc-hero-wrap{
+        max-height: 900px;
+    }
+}
+
+  </style>
 
 
    <!-- Header -->
@@ -19,7 +155,7 @@
         <nav class="nav-links-left">
             <a href="aboutus.html" class="nav-link">About</a>
             <a href="portifolio.html" class="nav-link">Portfolio</a>
-            <a href="contact.html" class="nav-link">Contact us</a>
+            <a href="index.html" class="nav-link">PROJECT ENQUIRY</a>
         </nav>
         <a href="index.html" class="logo">
             <img src="loggg.png" alt="SpaceCraft Logo">
@@ -39,178 +175,191 @@
             <a href="services.html" class="nav-link">Services</a>
             <a href="portifolio.html" class="nav-link">Portfolio</a>
            <a href="furniture.html" class="nav-link">Furniture Collection </a>
-            <a href="contact.html" class="nav-link">Contact us</a>
+            <a href="index.html" class="nav-link">PROJECT ENQUIRY</a>
              <a href="samantha.html" class="nav-link">Samantha</a>
         </nav>
     </div>
 </header>  <br>
 
-<section class="furniture-section">
-  <div class="container">
-    <h2><span>Furniture</span> Collection</h2>
-    <p>Discover Our Curated Collection Of Handcrafted Furniture Pieces, Each<br>
-    Designed With Meticulous Attention To Detail And Sustainable<br>
-    Craftsmanship.</p>
+<section class="sparc-hero-wrap">
+        <div class="sparc-hero-overlay"></div>
 
-    <div class="furniture-grid">
-      <!-- Card 1 -->
-      <div class="furniture-card">
-        <div class="tag">SOFAS</div>
-        <img src="images\sofa2.jpg" alt="sofa">
-        <div class="card-body">
-          <h3>The Heritage Collection</h3>
-          <p>Contemporary African-inspired sectional with organic cotton upholstery.</p>
-          <p class="materials"><strong>Materials:</strong> Organic cotton, reclaimed wood</p>
-          <button>Enquire today</button>
-        </div>
-      </div>
+        <div class="sparc-hero-content">
+            <span class="sparc-hero-subtitle">OUR</span>
+            <h1 class="sparc-hero-title">FURNITURE COLLECTIONS.</h1>
 
-      <!-- Card 2 -->
-      <div class="furniture-card">
-        <div class="tag">SOFAS</div>
-        <img src="images\sofa2.jpg" alt="sofa">
-        <div class="card-body">
-          <h3>The Heritage Collection</h3>
-          <p>Contemporary African-inspired sectional with organic cotton upholstery.</p>
-          <p class="materials"><strong>Materials:</strong> Organic cotton, reclaimed wood</p>
-          <button>Enquire today</button>
-        </div>
-      </div>
+           
 
-      <!-- Card 3 -->
-      <div class="furniture-card">
-        <div class="tag">SOFAS</div>
-        <img src="images\sofa1.jpg" alt="sofa">
-        <div class="card-body">
-          <h3>The Heritage Collection</h3>
-          <p>Contemporary African-inspired sectional with organic cotton upholstery.</p>
-          <p class="materials"><strong>Materials:</strong> Organic cotton, reclaimed wood</p>
-          <button>Enquire today</button>
+            <div class="sparc-scroll-down">&#709;</div>
         </div>
-      </div>
+    </section>
+
+
+    <section class="lx-sec">
+<div class="lx-wrap">
+
+<!-- TOP -->
+<div class="lx-top">
+
+    <div class="lx-left">
+        <h2>
+            DISCOVER <em>our</em> EXCLUSIVE luxury BRAND<br>
+            COLLABORATIONS
+        </h2>
     </div>
 
-     <div class="furniture-grid">
-      <!-- Card 1 -->
-      <div class="furniture-card">
-        <div class="tag">Desk</div>
-        <img src="images\sofa2.jpg" alt="sofa">
-        <div class="card-body">
-          <h3>The Heritage Collection</h3>
-          <p>Contemporary African-inspired sectional with organic cotton upholstery.</p>
-          <p class="materials"><strong>Materials:</strong> Organic cotton, reclaimed wood</p>
-          <button>Enquire today</button>
-        </div>
-      </div>
+    <div class="lx-right">
+        Milanzi Interiors collaborates with a curated selection of luxury furniture brands to bring you exclusive pieces that define elegance. From statement chairs and bespoke desks to custom cabinetry and handcrafted tables, each item is designed to elevate your space with timeless style and unparalleled quality. Explore our current collections below.<br><br>
 
-      <!-- Card 2 -->
-      <div class="furniture-card">
-        <div class="tag">Desk</div>
-        <img src="images\sofa2.jpg" alt="sofa">
-        <div class="card-body">
-          <h3>The Heritage Collection</h3>
-          <p>Contemporary African-inspired sectional with organic cotton upholstery.</p>
-          <p class="materials"><strong>Materials:</strong> Organic cotton, reclaimed wood</p>
-          <button>Enquire today</button>
-        </div>
-      </div>
+        Follow us on social media to stay inspired and be the first to discover new arrivals and exclusive offerings.
 
-      <!-- Card 3 -->
-      <div class="furniture-card">
-        <div class="tag">Desk</div>
-        <img src="images\sofa2.jpg" alt="sofa">
-        <div class="card-body">
-          <h3>The Heritage Collection</h3>
-          <p>Contemporary African-inspired sectional with organic cotton upholstery.</p>
-          <p class="materials"><strong>Materials:</strong> Organic cotton, reclaimed wood</p>
-          <button>Enquire today</button>
+        <div class="lx-socials">
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-pinterest-p"></i></a>
+            <a href="#"><i class="fab fa-tiktok"></i></a>
         </div>
-      </div>
     </div>
-  </div>
+
+</div>
+
+<!-- ROW 1 -->
+<div class="lx-row">
+    <div class="lx-card">
+        <small>ELEVATE YOUR WORKSPACE IN STYLE</small>
+        <h3>OFFICE CHAIRS</h3>
+        <p>
+            Experience unparalleled comfort and sophistication with our premium office chairs. Expertly crafted with luxurious materials and ergonomic design, each chair combines timeless elegance with modern functionality transforming your workspace into a haven of productivity and refined style.
+        </p>
+        <span class="lx-read">- READ MORE -</span>
+        <a href="#" class="lx-btn">ENQUIRIES & ORDERS</a>
+    </div>
+
+    <div class="lx-img">
+        <img src="images/Mask group.png" alt="">
+    </div>
+</div>
+
+<!-- ROW 2 -->
+<div class="lx-row reverse">
+    <div class="lx-card">
+        <small>ELEVATE YOUR WORKSPACE IN STYLE</small>
+        <h3>OFFICE DESK</h3>
+        <p>
+Redefine your workspace with our meticulously crafted desks, where elegance meets functionality. Made from high-quality materials with attention to every detail, each desk offers a perfect blend of style, durability, and efficiencyturning your office into a statement of sophistication and productivity.        </p>
+        <span class="lx-read">- READ MORE -</span>
+        <a href="#" class="lx-btn">ENQUIRIES & ORDERS</a>
+    </div>
+
+    <div class="lx-img">
+        <img src="images/zanzibar-rock-restaurant 1.png" alt="">
+    </div>
+</div>
+
+<div class="lx-row">
+    <div class="lx-card">
+        <small>ELEVATE YOUR WORKSPACE IN STYLE</small>
+        <h3>CUSTOM CABINETRY</h3>
+        <p>
+            Experience unparalleled comfort and sophistication with our premium office chairs. Expertly crafted with luxurious materials and ergonomic design, each chair combines timeless elegance with modern functionality transforming your workspace into a haven of productivity and refined style.
+        </p>
+        <span class="lx-read">- READ MORE -</span>
+        <a href="#" class="lx-btn">ENQUIRIES & ORDERS</a>
+    </div>
+
+    <div class="lx-img">
+        <img src="Mask group (2).png" alt="">
+    </div>
+</div>
+
+<!-- ROW 2 -->
+<div class="lx-row reverse">
+    <div class="lx-card">
+        <small>ELEVATE YOUR WORKSPACE IN STYLE</small>
+        <h3>LIVING ROOM SETUP</h3>
+        <p>
+    transform your living room into a sanctuary of style and comfort with our curated luxury furniture collections. Each piece is thoughtfully designed and crafted from the finest materials, blending timeless elegance with modern sophistication to create a harmonious, inviting space that reflects your refined taste.
+        </p>
+        <span class="lx-read">- READ MORE -</span>
+        <a href="#" class="lx-btn">ENQUIRIES & ORDERS</a>
+    </div>
+
+    <div class="lx-img">
+        <img src="Mask group (3).png" alt="">
+    </div>
+</div>
+
+</div>
 </section>
-<section class="join-team">
-  <div class="join-content">
-    <h2><em>Custom </em> Furniture Design</h2>
-    <p>
-      Looking for something unique? We specialize in bespoke 
-      furniture design tailored to your exact specifications and 
-      space requirements.
-    </p>
-    <button>start a custom project</button>
-  </div>
-</section>
 
- <br> <br>
-<footer class="milanzi-footer">
-  <div class="footer-container">
+<footer class="ft-footer">
 
-    <!-- Brand -->
-    <div class="footer-brand">
-      <h2 class="brand-title">Milanzi Interiors</h2>
-      <p class="brand-tagline">
-        Eclectic. Sustainable. Soulful.<br>
-        Malawi's Award-Winning Luxury<br>
-        Interior Design Studio.
-      </p>
-    </div>
+  <div class="ft-top">
 
-    <!-- Quick Links -->
-    <div class="footer-links">
-      <h3 class="footer-heading">Quick Links</h3>
-      <ul>
-        <li><a href="#">About Us</a></li>
-        <li><a href="#">Our Services</a></li>
-        <li><a href="#">Portfolio</a></li>
-        <li><a href="#">Furniture Collection</a></li>
-      </ul>
-    </div>
+    <div class="ft-newsletter">
+      <h3>NEWSLETTER</h3>
 
-    <!-- Contact -->
-    <div class="footer-contact">
-      <h3 class="footer-heading">Contact</h3>
-      <ul>
-        <li>
-          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5S10.62 6.5 12 6.5s2.5 1.12 2.5 2.5S13.38 11.5 12 11.5z"/>
-          </svg>
-          Lilongwe, Malawi
-        </li>
-        <li>
-          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57 1.1 0 2 .9 2 2V20c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h3c1.1 0 2 .9 2 2 0 1.24-.2 2.45-.57 3.57-.12.35-.03.75.24 1.02l-2.2 2.2z"/>
-          </svg>
-          +265 (0) 888 877 264
-        </li>
-        <li>
-          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
-          </svg>
-          hello@milanzigroupmw.com
-        </li>
-      </ul>
-    </div>
+      <div class="ft-form-row">
+        <div class="ft-field">
+          <label>NAME:</label>
+          <input type="text">
+        </div>
 
-    <!-- Social -->
-    <div class="footer-social">
-      <h3 class="footer-heading">Follow Us</h3>
-      <div class="social-icons">
-        <a href="#" class="facebook"><i class="fab fa-facebook-f"></i></a>
-        <a href="#" class="twitter"><i class="fab fa-twitter"></i></a>
-        <a href="#" class="linkedin"><i class="fab fa-linkedin-in"></i></a>
-        <a href="#" class="tiktok"><i class="fab fa-tiktok"></i></a>
+        <div class="ft-field">
+          <label>EMAIL:</label>
+          <input type="email">
+        </div>
       </div>
+
+      <button class="ft-btn">— SUBSCRIBE —</button>
+    </div>
+
+    <div class="ft-contact">
+      <h3>CONTACT</h3>
+      <p>HELLO@MILANZIGROUPMW.COM</p>
+      <p>+265 (0) 888 877 264</p>
     </div>
 
   </div>
 
-  <div class="footer-bottom">
-    <p>© 2025 Milanzi Interiors. All Rights Reserved.</p>
-   
+  <div class="ft-bottom">
+
+    <div class="ft-left">
+
+      <div class="ft-logo">
+        <img src="loggg.png" alt="Logo">
+      </div>
+
+      <div class="ft-links">
+        <div>
+          <span>ABOUT</span>
+          <span>ENQUIRE</span>
+          <span>PRIVACY POLICY</span>
+        </div>
+        <div>
+          <span>PORTFOLIO</span>
+          <span>PRESS</span>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="ft-social">
+      <i class="fab fa-instagram"></i>
+      <i class="fab fa-youtube"></i>
+      <i class="fab fa-tiktok"></i>
+    </div>
+
   </div>
+
 </footer>
-    <script src="main.js"></script>
 
+<script src="main.js"></script>
+<div class="ft-copy">
+  COPYRIGHT © MILANZ INTERIORS 2026 ALL RIGHTS RESERVED.
+</div>
 <script src="animationcore.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
 </body>
 </html>
