@@ -151,9 +151,9 @@
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
 
 <section class="hero">
-    <video autoplay muted loop playsinline class="hero-video">
-        <source src="Sparc - Trim.mp4" type="video/mp4">
-    </video>
+    <video autoplay muted loop playsinline preload="auto" class="hero-video">
+  <source src="milanzi.mp4" type="video/mp4">
+</video>
 
     <div class="overlay"></div>
 
@@ -563,41 +563,19 @@
 
 
  <script>
-document.addEventListener("DOMContentLoaded", function () {
-  const video = document.getElementById("bgVideo");
+document.addEventListener("DOMContentLoaded", () => {
+  const video = document.querySelector(".hero-video");
+  if (!video) return;
 
-  // Ensure proper attributes for mobile Safari
-  video.setAttribute("muted", "");
   video.muted = true;
-  video.setAttribute("playsinline", "");
-  video.setAttribute("webkit-playsinline", "");
-  video.setAttribute("autoplay", "");
-  video.autoplay = true;
+  video.playsInline = true;
   video.loop = true;
 
-  // Attempt autoplay immediately
-  const playPromise = video.play();
-
-  if (playPromise !== undefined) {
-    playPromise
-      .then(() => {
-        console.log("✅ Video autoplayed successfully");
-      })
-      .catch((error) => {
-        console.warn("⚠️ Autoplay blocked, waiting for user interaction...", error);
-        // iOS sometimes requires user gesture if autoplay fails
-        const resumePlayback = () => {
-          video.play();
-          document.removeEventListener("touchstart", resumePlayback);
-          document.removeEventListener("click", resumePlayback);
-        };
-        document.addEventListener("touchstart", resumePlayback, { once: true });
-        document.addEventListener("click", resumePlayback, { once: true });
-      });
-  }
+  video.play().catch(() => {
+    // retry once after slight delay
+    setTimeout(() => video.play().catch(() => {}), 500);
+  });
 });
-
-
 gsap.registerPlugin(ScrollTrigger);
 
 function bigFadeInEveryScroll(selector, options = {}) {
@@ -644,33 +622,6 @@ bigFadeInEveryScroll(".trusted-title, .trusted-text");
 bigFadeInEveryScroll(".footer-container > div");
 
 
-
-document.addEventListener("DOMContentLoaded", function () {
-    const video = document.getElementById("heroVideo");
-
-    // Ensure required attributes are set
-    video.muted = true;
-    video.autoplay = true;
-    video.loop = true;
-    video.playsInline = true;
-
-    // Try autoplay
-    const playPromise = video.play();
-
-    if (playPromise !== undefined) {
-        playPromise.catch(() => {
-            // If autoplay is blocked, start after first user interaction
-            const startVideo = () => {
-                video.play();
-                document.removeEventListener("touchstart", startVideo);
-                document.removeEventListener("click", startVideo);
-            };
-
-            document.addEventListener("touchstart", startVideo, { once: true });
-            document.addEventListener("click", startVideo, { once: true });
-        });
-    }
-});
 
 
 
